@@ -4,7 +4,7 @@ import { LitElement, html, css } from 'https://cdn.skypack.dev/lit-element@2.3.1
 class WikiArtikel extends LitElement {
     static get properties() {
         return {
-            id: { type: String, attribute: 'list-title', reflect: true },
+            id: { type: String, attribute: 'id', reflect: true },
             titel: { type: String, reflect: true },
             tekst: { type: String, reflect: true }
         }
