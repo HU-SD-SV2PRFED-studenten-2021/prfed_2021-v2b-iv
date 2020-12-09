@@ -1,0 +1,1 @@
+import './components/artikel.js';
