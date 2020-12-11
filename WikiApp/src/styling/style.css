@@ -38,14 +38,37 @@ footer {
 }
 
 
-#zoekbalk {
-    margin: 10px;
-    padding: 20px;
-    align-self: center;
-    height: 1em;
-    font-size: 1.1em;
+.zoeken-container{
+    background: #333;
+    border-radius: 6px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
 }
 
+.zoeken-container input {
+    background: transparent;
+    border: 0;
+    font-size: 30px;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+/*.suggestions{*/
+/*    border-top: 2px solid #999;*/
+/*}*/
+
+.suggestions > div{
+    padding: 15px;
+    font-size: 20px;
+    color: #fff;
+    border-top: 1px solid #666;
+    cursor: pointer;
+}
+
+.suggestions > div:hover{
+    background-color: #1e4dd4;
+}
 article {
     border: 0.1em solid rgb(46, 42, 42);
     margin-top: 3em;
