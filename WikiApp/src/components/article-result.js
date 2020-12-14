@@ -87,7 +87,8 @@ class ArticleResult extends LitElement{
                             suggestieTitel.appendChild(suggestieTekst);
 
                             let href = document.createAttribute('href');
-                            href.value = 'http://localhost:5000/artikel?id=' + article.id;
+                            const urlParams = new URLSearchParams(window.location.search);
+                            href.value = urlParams + '/artikel?id=' + article.id;
                             a.setAttributeNode(href);
 
                             a.appendChild(suggestieTitel);
