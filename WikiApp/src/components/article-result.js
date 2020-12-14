@@ -14,6 +14,7 @@ class ArticleResult extends LitElement{
         border-radius: 6px;
         overflow: hidden;
         
+        
     }
     
         .resultaten > ol {
