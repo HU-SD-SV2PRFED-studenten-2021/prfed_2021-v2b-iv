@@ -13,6 +13,7 @@ class ArticleResult extends LitElement{
         background-color: lightgrey;
         border-radius: 6px;
         overflow: hidden;
+        
     }
     
         .resultaten > ol {
