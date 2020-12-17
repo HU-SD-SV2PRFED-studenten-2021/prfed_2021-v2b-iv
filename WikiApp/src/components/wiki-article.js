@@ -41,7 +41,6 @@ class WikiArtikel extends LitElement {
                     <slot name="titel">${this.titel}</slot>
                 </a>
             </h1>
-                
                 <slot name="tekst">${this.tekst}</slot>
             </div>
         `;

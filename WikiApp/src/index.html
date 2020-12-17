@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="./styling/style.css">
     <title>Prototype Hoofdpagina</title>
 </head>
+<style>
+    view-index{
+        display: grid;
+        grid-template-columns: 300px 300px 300px;
+    }
+</style>
+
 <body>
     <header>
         <h1>Website's Header</h1>
@@ -35,36 +42,20 @@
         </ul>
     </div>
     <main>
+        <view-index></view-index>
+        <script type="module">
+            import getData from "./utils/get-data.js"
+            const indexView = document.querySelector('view-index')
 
-        <div class="navbar">
-            <h2>Content</h2>
-            <ul>
-                <li>item 1</li>
-                <li>item 2</li>
-                <li>item 3</li>
-                <li>item 4</li>
-                <li>item 5</li>
-                <li>item 6</li>
-            </ul>
-        </div>
-
-    <article id="first-article">
-        <h2>Kopje</h2>
-        <p>sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj </p>
-    </article>
-
-
-    <article id="second-article">
-        <h2>Kopje</h2>
-        <p>sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj </p>
-    </article>
-
-
-    <article id="third-article">
-        <h2>Kopje</h2>
-        <p>sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj sdf sdflksdf jsldkf sdlfk sjdlfk sdflk sdflksjd flksdjf lsdkfj sldkfj </p>
-    </article>
-
+            getData('categories')
+                .then(({ categories }) => {
+                    const categoryPromises = categories.map(category => getData(category))
+                    return Promise.all(categoryPromises)
+                })
+                .then(articleData => {
+                    indexView.articleData = articleData
+                })
+        </script>
     </main>
     <footer>
         <p>

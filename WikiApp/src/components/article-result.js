@@ -2,6 +2,13 @@ import {LitElement, html, css} from 'https://cdn.skypack.dev/lit-element@2.3.1'
 import getData from '../utils/get-data.js'
 
 class ArticleResult extends LitElement{
+
+    static get properties() {
+        return{
+            suggestie: { type: Object}
+        }
+    }
+
     static get styles() {
         return css`
         div {
@@ -13,8 +20,6 @@ class ArticleResult extends LitElement{
         background-color: lightgrey;
         border-radius: 6px;
         overflow: hidden;
-        
-        
     }
     
         .resultaten > ol {
@@ -51,56 +56,105 @@ class ArticleResult extends LitElement{
 
     constructor() {
         super();
+        this.suggestie = {};
     }
 
     connectedCallback() {
         super.connectedCallback();
         const input = document.querySelector('search-bar');
-        input.addEventListener('suggesties', this.filterData);
-    }
+        input.addEventListener('suggesties', () =>{
+            const inputValue = event.detail;
+            let suggestions = '';
+            const articleResult = document.querySelector('article-result')
+            const suggestieLijst = articleResult.shadowRoot.querySelector('#suggestion-list');
 
-    filterData(event){
-        const inputValue = event.detail;
-        let suggestions = '';
-        const articleResult = document.querySelector('article-result')
-        const suggestieLijst = articleResult.shadowRoot.querySelector('#suggestion-list');
-
-        suggestieLijst.innerHTML = '';
-
-        getData('articles')
-            .then(({ articles }) => (
-                suggestions = articles.filter(function (article) {
-                    if (inputValue === ''){
-                        suggestieLijst.innerHTML = '';
-                    }
-                    else {
-                        if (article.title.toLowerCase().includes(inputValue.toLowerCase()) || article.text.toLowerCase().includes(inputValue.toLowerCase())){
-                            const sentenceArray = article.text.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
-                            const suggestieZin = sentenceArray.filter(sentence => sentence.toLowerCase().includes(inputValue.toLowerCase()));
-
-                            const a = document.createElement('a');
-                            const suggestieTitel = document.createElement('li');
-                            const suggestieTekst = document.createElement('p');
-                            suggestieTekst.innerHTML = suggestieZin[0];
-                            suggestieTitel.innerHTML = article.title;
-
-                            suggestieTitel.appendChild(suggestieTekst);
-
-                            let href = document.createAttribute('href');
-                            const urlParams = new URLSearchParams(window.location.search);
-                            href.value = urlParams + '/artikel?id=' + article.id;
-                            a.setAttributeNode(href);
-
-                            a.appendChild(suggestieTitel);
-                            suggestieLijst.appendChild(a)
+            // this.suggestie.tekst = 'a';
+            // suggestieLijst.innerHTML = '';
+            getData('articles')
+                .then(({ articles }) => (
+                    suggestions = articles.filter( (article) => {
+                        if (inputValue === ''){
+                            // suggestieLijst.innerHTML = '';
                         }
-                }})));
+                        else {
+                            if (article.title.toLowerCase().includes(inputValue.toLowerCase()) || article.text.toLowerCase().includes(inputValue.toLowerCase())){
+                                const sentenceArray = article.text.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
+                                const suggestieTekst = sentenceArray.filter(sentence => sentence.toLowerCase().includes(inputValue.toLowerCase()));
+
+                                this.suggestie = {titel: article.title, tekst: suggestieTekst[0]};
+
+
+                                // this.suggestie.Tekst = [...this.suggestieTekst, (suggestieZinn[0])];
+                                // const a = document.createElement('a');
+                                // const suggestieTitel = document.createElement('li');
+                                // const suggestieTekst = document.createElement('p');
+                                // suggestieTekst.innerHTML = suggestieZin[0];
+                                // this.suggestie.Titel = [...this.suggestieTitel, (article.title)];
+                                //
+                                // suggestieTitel.appendChild(suggestieTekst);
+
+                                // let href = document.createAttribute('href');
+                                // const urlParams = new URLSearchParams(window.location.search);
+                                // href.value = urlParams + '/artikel?id=' + article.id;
+                                // a.setAttributeNode(href);
+
+                                // a.appendChild(suggestieTitel);
+                                // suggestieLijst.appendChild(a)
+                            }
+                        }})));
+        });
     }
+
+    // filterData(event){
+    //     const inputValue = event.detail;
+    //     let suggestions = '';
+    //     const articleResult = document.querySelector('article-result')
+    //     const suggestieLijst = articleResult.shadowRoot.querySelector('#suggestion-list');
+    //
+    //     const lijstjeTeksten = [];
+    //     suggestieLijst.innerHTML = '';
+    //     getData('articles')
+    //         .then(({ articles }) => (
+    //             suggestions = articles.filter( (article) => {
+    //                 if (inputValue === ''){
+    //                     suggestieLijst.innerHTML = '';
+    //                 }
+    //                 else {
+    //                     if (article.title.toLowerCase().includes(inputValue.toLowerCase()) || article.text.toLowerCase().includes(inputValue.toLowerCase())){
+    //                         const sentenceArray = article.text.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
+    //                         const suggestieZinn = sentenceArray.filter(sentence => sentence.toLowerCase().includes(inputValue.toLowerCase()));
+    //
+    //                         lijstjeTeksten.push(suggestieZinn[0]);
+    //                         // const a = document.createElement('a');
+    //                         // const suggestieTitel = document.createElement('li');
+    //                         // const suggestieTekst = document.createElement('p');
+    //                         // suggestieTekst.innerHTML = suggestieZin[0];
+    //                         // suggestieTitel.innerHTML = article.title;
+    //                         //
+    //                         // suggestieTitel.appendChild(suggestieTekst);
+    //
+    //                         // let href = document.createAttribute('href');
+    //                         // const urlParams = new URLSearchParams(window.location.search);
+    //                         // href.value = urlParams + '/artikel?id=' + article.id;
+    //                         // a.setAttributeNode(href);
+    //
+    //                         // a.appendChild(suggestieTitel);
+    //                         // suggestieLijst.appendChild(a)
+    //                     }
+    //             }})));
+    //     articleResult.dataZetten(lijstjeTeksten);
+    // }
+
+
 
     render() {
         return html`
         <div class="resultaten">
             <ol id="suggestion-list">
+                <p>
+                    ${Object.entries(this.suggestie).map(item =>
+                    html`<span>${item}</span>`)}
+                </p>
             </ol>
          </div>   
         `
