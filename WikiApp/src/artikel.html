@@ -13,6 +13,9 @@
     const viewProduct = document.querySelector('wiki-article')
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
+    const category = urlParams.get('category');
+
+    viewProduct.setAttribute('category', category)
     viewProduct.setAttribute('id', id)
 </script>
 </body>

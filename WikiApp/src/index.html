@@ -46,6 +46,7 @@
         <script type="module">
             import getData from "./utils/get-data.js"
             const indexView = document.querySelector('view-index')
+            const articleResult = document.querySelector('article-result')
 
             getData('categories')
                 .then(({ categories }) => {
@@ -54,6 +55,7 @@
                 })
                 .then(articleData => {
                     indexView.articleData = articleData
+                    articleResult.articleData = articleData
                 })
         </script>
     </main>

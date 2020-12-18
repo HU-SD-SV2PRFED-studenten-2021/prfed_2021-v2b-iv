@@ -6,7 +6,8 @@ class WikiArtikel extends LitElement {
         return {
             id: { type: String, attribute: 'id', reflect: true },
             titel: { type: String, reflect: true },
-            tekst: { type: String, reflect: true }
+            tekst: { type: String},
+            category: {type: String}
         }
     }
 
@@ -27,7 +28,7 @@ class WikiArtikel extends LitElement {
             .then(({articles}) => articles.find(article => article.id === this.id))
             .then(article => {
                 this.titel = article.title;
-                this.tekst = article.text;
+                this.tekst = JSON.parse(JSON.stringify(article.text));
                     });
     }
 

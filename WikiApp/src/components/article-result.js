@@ -2,13 +2,6 @@ import {LitElement, html, css} from 'https://cdn.skypack.dev/lit-element@2.3.1'
 import getData from '../utils/get-data.js'
 
 class ArticleResult extends LitElement{
-
-    static get properties() {
-        return{
-            suggestie: { type: Object}
-        }
-    }
-
     static get styles() {
         return css`
         div {
@@ -53,14 +46,25 @@ class ArticleResult extends LitElement{
         `
     }
 
+    static get properties() {
+        return{
+            suggestie: { type: Array}
+        }
+    }
+
 
     constructor() {
         super();
-        this.suggestie = {};
+        this.suggestie = [];
     }
 
     connectedCallback() {
         super.connectedCallback();
+        const lijstArtikelen = [];
+        this.articleData.map(category=>{
+            lijstArtikelen.push(category.artikelen)
+            this.suggestie = lijstArtikelen
+        })
         const input = document.querySelector('search-bar');
         input.addEventListener('suggesties', () =>{
             const inputValue = event.detail;
@@ -149,6 +153,7 @@ class ArticleResult extends LitElement{
 
     render() {
         return html`
+        ${console.log(this.suggestie)}
         <div class="resultaten">
             <ol id="suggestion-list">
                 <p>

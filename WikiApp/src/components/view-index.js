@@ -2,6 +2,12 @@ import { LitElement, html, css } from 'https://cdn.skypack.dev/lit-element@2.3.1
 import getData from "../utils/get-data.js";
 
 const styles = css`
+category-list{
+    border: 2px solid black;
+    margin: 15px;
+}
+
+
 `
 
 class viewIndex extends LitElement {
@@ -18,8 +24,6 @@ class viewIndex extends LitElement {
         super();
         this.articleData = []
     }
-
-
 
     render() {
         return html`

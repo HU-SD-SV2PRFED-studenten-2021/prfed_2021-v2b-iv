@@ -3,7 +3,21 @@ import getData from "../utils/get-data.js";
 
 const styles = css`
 .artikel-titel{
+    border-radius: 20px;
+    background-color: #DCDCDC;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+}
 
+.artikel-titel:hover{
+    background-color: #A9A9A9;
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
 }
 
 `
@@ -25,8 +39,7 @@ class wkArticle extends LitElement {
 
     connectedCallback() {
         super.connectedCallback();
-        this.link = `/artikel.html?category=${this.getAttribute('category')}&id=${this.getAttribute('id')}`;
-
+        this.link = `/artikel?category=${this.getAttribute('category')}&id=${this.getAttribute('id')}`;
     }
 
     render() {
