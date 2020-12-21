@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.skypack.dev/lit-element@2.3.1';
-import { classMap } from '/lit-html/directives/class-map.js';
+import {classMap} from '/node_modules/lit-html/directives/class-map.js';
+
 
 class WikiArtikel extends LitElement {
     static get properties() {
@@ -17,50 +18,66 @@ class WikiArtikel extends LitElement {
     constructor() {
         super();
 
-        this.datum = Date.now();
+        // props init
+        this.id = "";
+        this.datum = new Date(Date.now()).toLocaleString();
         this.title = "";
         this.tekst = "";
-        this.tags = [];
 
-        this.collapsed = true;
+        this.collapsed = false;
     }
 
     static get styles() {
         return css`
+
             :host {
-                border: 0.1em solid rgb(46, 42, 42);
-                margin-top: 3em;
-                padding: 1em;
+                max-height: min-content;
+            }
+
+            .art-cont {
+                border: 1px solid #000000;
+                border-radius: 7px;
+                padding: 1em;  
+                margin-top: 2em;              
+            }
+
+            .expanded--false {
+                height: 0;
+                overflow-y: hidden;
             }
         `;
     }
 
     handelCollapseArtikel() {
         this.collapsed = !this.collapsed;
+        console.log('tst')
     }
 
 
     render() {
       return html`
-        <div class="artikel-header">
-            <h1 class="titel">${this.titel}</h1>
-            <p class="datum">${this.datum}</p>
-        </div>
-        <div class="artikel-main">
-            <p class="tekst">${this.tekst}</p>
-        </div>
-        <div class="artikel-footer">
-            <div class="tags-cont">
-                <ul class="tags-lst">
-                    ${this.tags.map((tag) => html`
-                        <li class="tag">${tag}</li>
-                    `)}
-                </ul>
+        <div class="art-cont">
+            <div class="art-header">
+                <h1 class="titel">${this.titel}</h1>
+                <p class="datum">${this.datum}</p>
             </div>
-            <button @click="${this.handelCollapseArtikel}"
-                    class="collapse-btn ${classMap({ collapsed: this.collapsed })}">Lees meer</button>
+
+            <!-- Fix issue here somewhere -->
+            <div class="art-main expanded ${classMap({ 'expanded--false': this.collapsed })}">
+
+
+                <p class="tekst">${this.tekst}</p>
+                <div id="tags-cont">
+                    <ul id="tags-lst">
+                        ${this.tags.map((tag) => html`
+                            <li class="tag">${tag}</li>
+                        `)}
+                    </ul>
+            </div>
+            <div class="art-btn-cont">
+                <button @click="${this.handelCollapseArtikel}">Lees meer</button>
+            </div>
         </div>
-        
         `
     }
 }

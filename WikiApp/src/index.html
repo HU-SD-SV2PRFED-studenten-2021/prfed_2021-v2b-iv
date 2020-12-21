@@ -37,6 +37,7 @@
     </div>
    
     <main>
+        <add-form></add-form>
 
         <div class="navbar">
             <h2>Content</h2>
@@ -50,31 +51,39 @@
             </ul>
         </div>
 
-        <wiki-artikel id="123">
-            <span slot="titel">Nieuwe artikel</span>
-            <span slot="tekst">
-                <h2>Kopje 1</h2>
-                    <p>sdf sdf sdf  sdf sdf  sdf  sdf sdf sdf sdf sdfsdfsdf sdfsdf </p>
-                    <p>sdf sdf sdf  sdf sdf  sdf  sdf sdf sdf sdf sdfsdfsdf sdfsdf </p>
-                    <p>sdf sdf sdf  sdf sdf  sdf  sdf sdf sdf sdf sdfsdfsdf sdfsdf </p>
-                <h2>Kopje 2</h2>
-                    <p>sdf sdf sdf  sdf sdf  sdf  sdf sdf sdf sdf sdfsdfsdf sdfsdf </p>
-                    <p>sdf sdf sdf  sdf sdf  sdf  sdf sdf sdf sdf sdfsdfsdf sdfsdf </p>
-                    <p>sdf sdf sdf  sdf sdf  sdf  sdf sdf sdf sdf sdfsdfsdf sdfsdf </p>
-                    <p>sdf sdf sdf  sdf sdf  sdf  sdf sdf sdf sdf sdfsdfsdf sdfsdf </p>
-
-            </span>
-            
-        </wiki-artikel>
+        <artikel-list></artikel-list>
     </main>
     <footer>
         <p>
             website's footer
         </p>
     </footer>
-
+    
     <script>
-        import('./components/artikel.js')
+        const artieklList = document.querySelector('artikel-list');
+
+        import('./components/addForm.js');
+        import('./components/artikel.js');
+        import('./components/artikelList.js').then(() => {
+            artieklList.artikelen = [
+                { titel: 'Test Artikel',
+                tekst: 'test subkopje Excepteur <br> adipisicing non nisi consequat officia labore eu irure dolore. Occaecat voluptate velit quis cupidatat sit id aliquip sunt exercitation irure tempor. Amet commodo nostrud labore do occaecat amet est velit eu elit. Elit irure minim sit ullamco ut laboris consectetur sunt. Minim labore voluptate elit anim consectetur veniam ipsum enim id. Fugiat officia veniam deserunt laboris qui irure excepteur dolor.',
+                tags: ['#1st-group', '#2nd-group'] },
+
+
+                { titel: 'Test Artikel',
+                tekst: 'test subkopje Excepteur <br> adipisicing non nisi consequat officia labore eu irure dolore. Occaecat voluptate velit quis cupidatat sit id aliquip sunt exercitation irure tempor. Amet commodo nostrud labore do occaecat amet est velit eu elit. Elit irure minim sit ullamco ut laboris consectetur sunt. Minim labore voluptate elit anim consectetur veniam ipsum enim id. Fugiat officia veniam deserunt laboris qui irure excepteur dolor.',
+                tags: ['#1st-group', '#2nd-group'] },
+
+
+                { titel: 'Test Artikel',
+                tekst: 'test subkopje Excepteur <br> adipisicing non nisi consequat officia labore eu irure dolore. Occaecat voluptate velit quis cupidatat sit id aliquip sunt exercitation irure tempor. Amet commodo nostrud labore do occaecat amet est velit eu elit. Elit irure minim sit ullamco ut laboris consectetur sunt. Minim labore voluptate elit anim consectetur veniam ipsum enim id. Fugiat officia veniam deserunt laboris qui irure excepteur dolor.',
+                tags: ['#1st-group', '#2nd-group'] }
+
+
+                
+            ];
+        });
     </script>
 </body>
 </html>

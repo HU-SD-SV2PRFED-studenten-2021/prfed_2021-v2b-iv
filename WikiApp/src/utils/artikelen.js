@@ -1,0 +1,1 @@
+// TODO: a class that provides static func(s) that return all articles 
