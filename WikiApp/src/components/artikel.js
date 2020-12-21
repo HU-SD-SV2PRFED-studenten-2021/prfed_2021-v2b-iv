@@ -66,7 +66,7 @@ class WikiArtikel extends LitElement {
             <div class="art-main expanded ${classMap({ 'expanded--false': this.collapsed })}">
 
 
-                <p class="tekst">${this.tekst}</p>
+                <div class="tekst">${this.tekst}</div>
                 <div id="tags-cont">
                     <ul id="tags-lst">
                         ${this.tags.map((tag) => html`
