@@ -1,6 +1,5 @@
 import { LitElement, html, css } from 'https://cdn.skypack.dev/lit-element@2.3.1';
-import {classMap} from '/node_modules/lit-html/directives/class-map.js';
-
+import { classMap } from 'lit-html/directives/class-map.js'
 
 class WikiArtikel extends LitElement {
     static get properties() {

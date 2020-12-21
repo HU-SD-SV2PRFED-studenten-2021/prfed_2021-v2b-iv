@@ -1,6 +1,4 @@
 import { LitElement, html, css } from 'https://cdn.skypack.dev/lit-element@2.3.1';
-// import { classMap } from './../../node_modules/lit-html/directives/class-map.js';
-
 
 
 class ArtikelList extends LitElement {
