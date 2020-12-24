@@ -2,7 +2,7 @@ import {LitElement, html, css} from 'https://cdn.skypack.dev/lit-element@2.3.1'
 
 const styles = css`
     label input {
-        visibility: hidden;
+        display: none;
     }
             
     label input:checked + span {
