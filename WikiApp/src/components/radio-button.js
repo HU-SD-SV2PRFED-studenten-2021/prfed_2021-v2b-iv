@@ -1,19 +1,8 @@
 import {LitElement, html, css} from 'https://cdn.skypack.dev/lit-element@2.3.1'
 
 const styles = css`
-    label {
-        display: -webkit-box;
-        display: flex;
-        cursor: pointer;
-        font-weight: 500;
-        position: relative;
-        overflow: hidden;
-        margin-bottom: 0.375em;  
-    }
-    
     label input {
-        position: absolute;
-        left: -9999px;
+        visibility: hidden;
     }
             
     label input:checked + span {
@@ -30,8 +19,7 @@ const styles = css`
         -webkit-box-align: center;
         align-items: center;
         padding: 0.375em 0.75em 0.375em 0.375em;
-        border-radius: 99em;
-        -webkit-transition: 0.25s ease;
+        border-radius: 30px;
         transition: 0.25s ease;
     }
 
@@ -40,16 +28,14 @@ const styles = css`
     }
 
     label span:before {
-        display: -webkit-box;
         display: flex;
         flex-shrink: 0;
         content: "";
         background-color: #fff;
         width: 1.5em;
         height: 1.5em;
-        border-radius: 50%;
+        border-radius: 100%;
         margin-right: 0.375em;
-        -webkit-transition: 0.25s ease;
         transition: 0.25s ease;
         box-shadow: inset 0 0 0 0.125em #00005c;
     }
@@ -119,7 +105,12 @@ class radioButton extends LitElement {
         <div class="radio-button-container" value="${this.filter}"
                 @change="${this.filterChanged}">
             
-            ${Object.values(VisibilityFilter).map(filter => html`<label><input type="radio" name="filter" value="${filter}"  checked  @change="${this.emitChange()}" /><span>${filter}</span></label>`
+            ${Object.values(VisibilityFilter).map(filter =>
+                 html`
+                    <label>
+                        <input type="radio" name="filter" value="${filter}"  checked  @change="${this.emitChange()}" />
+                        <span>${filter}</span>
+                    </label>`
         )}
         </div>
         `;
