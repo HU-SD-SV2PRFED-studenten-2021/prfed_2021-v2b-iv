@@ -2,26 +2,22 @@ import { LitElement, html, css } from 'https://cdn.skypack.dev/lit-element@2.3.1
 import getData from "../utils/get-data.js";
 
 const styles = css`
-.artikel-titel{
-    border-radius: 20px;
-    background-color: #DCDCDC;
-    padding: 5px;
-    margin: 10px;
-    text-align: center;
-}
+    .artikel-titel {
+        padding: 5px;
+        text-align: center;
+        margin: 0;
+        border-top: 1px solid rgb(207 207 207 / 84%);
+    }
 
-.artikel-titel:hover{
-    background-color: #A9A9A9;
-}
+    .artikel-titel:hover {
+        background-color: rgb(223 223 223);
+    }
 
 
-a{
-    text-decoration: none;
-    color: black;
-}
-
-`
-
+    a {
+        text-decoration: none;
+        color: black;
+    }`
 
 class wkArticle extends LitElement {
 

@@ -2,18 +2,20 @@ import { LitElement, html, css } from 'https://cdn.skypack.dev/lit-element@2.3.1
 import getData from "../utils/get-data.js";
 
 const styles = css`
-h2{
-    padding: 5px;
-    margin:0;
-    text-align: center;
-    border-bottom: 1px solid black;
-}
+    :host {
+        width: 20em;
+        background: rgb(249 249 249);
+        margin: 1em;
+        text-align: center;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        
+    }
 `
 
 
 class categoryList extends LitElement {
 
-    static get styles(){
+    static get styles() {
         return styles;
     }
 

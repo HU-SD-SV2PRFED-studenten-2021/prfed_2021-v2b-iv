@@ -1,26 +1,26 @@
 import { LitElement, html, css } from 'https://cdn.skypack.dev/lit-element@2.3.1';
 import getData from "../utils/get-data.js";
 
-const styles = css`
-category-list{
-    border: 2px solid black;
-    margin: 15px;
-}
-
-
-`
 
 class viewIndex extends LitElement {
-    static get styles(){
-        return styles;
+    static get styles() {
+        return css`
+            :host {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;              
+            }
+
+        `
     }
-    static get properties(){
-        return{
+
+    static get properties() {
+        return {
             articleData: { type: Array }
         }
     }
 
-    constructor(){
+    constructor() {
         super();
         this.articleData = []
     }
@@ -43,11 +43,7 @@ class viewIndex extends LitElement {
         </category-list>
       `)}
         
-        
-        `
-
-    }
-
+    `}
 }
 
 window.customElements.define('view-index', viewIndex);
