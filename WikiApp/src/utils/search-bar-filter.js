@@ -9,7 +9,7 @@ export default function filterSuggesties(inputValue, artikelData) {
     artikelen
         .map(artikel => {
             if (suggesties.length <= 4){
-                if(artikel.text.toLowerCase().includes(inputValue.toLowerCase()) || artikel.title.toLowerCase().includes(inputValue.toLowerCase())) {
+                if(artikel.text.toLowerCase().includes(inputValue.toLowerCase()) || artikel.title.toLowerCase().includes(inputValue.toLowerCase())){
                     const sentenceArray = artikel.text.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
                     const suggestieZin = sentenceArray.filter(sentence => sentence.toLowerCase().includes(inputValue.toLowerCase()));
                     const artkl = {title: artikel.title, text: suggestieZin[0] + '..', id: artikel.id};

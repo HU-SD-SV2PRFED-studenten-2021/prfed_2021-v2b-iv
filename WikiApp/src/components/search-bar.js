@@ -37,7 +37,7 @@ class searchBar extends LitElement {
             right: 0;
             margin-top: 39px;
             width: 406px;
-            background-color: lightgrey;
+            background-color: rgb(29 113 185);
             border-radius: 6px;
             overflow: hidden;
     }
@@ -108,13 +108,22 @@ class searchBar extends LitElement {
             }
         }
     }
+    redirect(e) {
+        if (e.key === 'Enter') {
+            const urlParam = new URLSearchParams(window.location.search);
+            let url = urlParam + '/zoekPagina?value=' + this.inputValue;
+            window.location = url;
+        }
+    }
 
     render() {
         const urlParams = new URLSearchParams(window.location.search);
         return html`
         <div class="zoeken-container">
             <label for="zoekbalk"></label>
-            <input @keyup="${this.inputSuggestion}" class="search-input" type="text" id="zoekbalk" name="zoeken" placeholder="Doorzoek de wiki..." value="">
+            <input @keyup="${this.inputSuggestion}" @keypress="${this.redirect}"
+             class="search-input" type="text" id="zoekbalk" name="zoeken" placeholder="Doorzoek de wiki..." value=""
+            >
             <div class="suggestie-container">
             ${this.suggesties.map(artikel => html`
             ${console.log(artikel)}
