@@ -10,7 +10,6 @@ class searchBar extends LitElement {
 
     static get styles() {
         return css`
-
             label {
                 visibility: hidden;
             }
@@ -23,56 +22,53 @@ class searchBar extends LitElement {
                 font-size: .8em;
                 font-family: sans-serif;
                 padding: .4em 1em;
+                margin-right: 1.8em;
             }
             
             input::placeholder {
                 color: gray;
             }
               
-            
-            .suggestie-container {
-                width:400px;
-            }
-
             .suggestie-container {
                 position: absolute;
                 display: block;
                 right: 0;
                 margin-top: 39px;
-                width: 406px;
-                background-color: rgb(29 113 185);
+                max-height: 25em;
+                width: 22em;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                border: 1px solid #c3c3c3;
                 border-radius: 6px;
-                overflow: hidden;
+                overflow: auto;
+                background-color: #ffffff;
             }
-    
-            .suggestie-container > ol {
-                list-style-type: none;
-                padding-left: 0;
-                margin-top: 0;
-                margin-bottom: 0;
-            }
-    
-            .suggestie-container > ol > a {
-                color:black;
+
+            a {
+                list-style: none;
                 text-decoration: none;
             }
-        
-            .suggestie-container > ol > a > li{
-                color: #24292e !important;
-                padding: 2.5px;
-                font-size: 20px;
-                border-bottom: 1px solid #666;
-                cursor: pointer;
+
+            h3 {
+                color: #155a96;
+                margin: 0;
+                padding: 0;
+            }
+
+            p {
+                color: #051635;
+                margin: 0;
+                padding: 0;
+                padding-left: .5em;
+                padding-bottom: .5em;
+            }
+
+            li {
+                padding-left: .5em;
+                padding-right: .5em;
+                margin-top: .7em;
+                margin-bottom: .7em;
             }
     
-            .suggestie-container > ol > a > li:hover{
-                background-color: #97CBFF;
-            }
-    
-            .suggestie-container > ol > a > li > p{
-                color: #586069 !important;
-                font-size: 15px;
-            }
     `}
 
     static get properties(){
@@ -133,7 +129,7 @@ class searchBar extends LitElement {
             <a href="${urlParams + '/artikel?id=' + artikel.id}">
                 <li>
                     <h3>${artikel.title}</h3>
-                    <h4>${artikel.text}</h4>
+                    <p>${artikel.text}</h4>
                 </li>
             </a>
        
