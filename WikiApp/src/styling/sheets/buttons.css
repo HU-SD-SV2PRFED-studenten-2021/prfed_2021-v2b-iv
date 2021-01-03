@@ -1,26 +1,35 @@
 .primary-btn {
-
+    background-color: #7aff00;
+    border: 1px solid gray;
 }
 
 
 .primary-btn:hover {
-
+    background-color: #aaffaa;
 }
 
 
 .secondary-btn {
-
+    background-color: #f4faff;
+    border: 2px solid black;
 }
 
 
 .secondary-btn:hover {
-    
+    background-color: #ffffff;
 }
 
+.nav-btn:active {
+    border: 3px solid black;
+}
 
 .nav-btn {
+    box-sizing: border-box;
     padding: 10px 0 10px 0;
     margin: .5em;
     font-size: .8em;
     min-width: 220px;
+    border-radius: 3px;
+    cursor: pointer;
+
 }
