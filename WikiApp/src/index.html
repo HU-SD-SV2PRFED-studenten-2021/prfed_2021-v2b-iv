@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styling/style.css">
+
     <title>Hbo-i Wiki website</title>
 </head>
 
@@ -17,9 +18,10 @@
         <!-- <article-result></article-result> -->
     </header>
     <nav>
-        <button class="nav-btn">Inloggen</button>
+        <a href="/login" class="nav-btn">Inloggen</a>
         <button class="nav-btn">Voeg artikel toe</button>
     </nav>
+    </div>
     <main>
         <view-index></view-index>
         <script type="module">
@@ -36,6 +38,10 @@
                     indexView.articleData = articleData
                     articleResult.articleData = articleData
                 })
+
+            function openForm() {
+                console.log('open form')
+            }
         </script>
     </main>
     <footer>
@@ -61,4 +67,23 @@
     </footer>
     <script type="module" src="main.js"></script>
 </body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBD2gup-WRDVBR-JKiWvIvFNV7dCWxwkYc",
+        authDomain: "fep2wiki.firebaseapp.com",
+        projectId: "fep2wiki",
+        storageBucket: "fep2wiki.appspot.com",
+        messagingSenderId: "193709243496",
+        appId: "1:193709243496:web:6221f732d66684e6e04fdd"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>
 </html>
