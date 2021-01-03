@@ -9,9 +9,14 @@ class viewIndex extends LitElement {
             .category-container {
                 display: flex;
                 flex-flow: row wrap;
-                justify-content: space-around;              
+                justify-content: space-around;   
             }
 
+
+            category-list:hover {
+                background-color: #fdfdfd;
+                box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            }
         `
 
     }
