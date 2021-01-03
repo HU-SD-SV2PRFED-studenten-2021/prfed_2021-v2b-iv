@@ -20,7 +20,7 @@ class WikiLogin extends LitElement {
     padding: 12px;
     margin: 5px 0 22px 0;
     background: #f1f1f1;
-    
+     
     max-width: 300px;
     height: 2.3em;
     border: none;
