@@ -35,7 +35,7 @@ class wkArticle extends LitElement {
 
     connectedCallback() {
         super.connectedCallback();
-        this.link = `/artikel?category=${this.getAttribute('category')}&id=${this.getAttribute('id')}`;
+        this.link = `/artikel?id=${this.getAttribute('id')}`;
     }
 
     render() {
