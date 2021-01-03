@@ -37,7 +37,6 @@ class searchBar extends LitElement {
                 max-height: 25em;
                 width: 22em;
                 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-                border: 1px solid #c3c3c3;
                 border-radius: 6px;
                 overflow: auto;
                 background-color: #ffffff;
