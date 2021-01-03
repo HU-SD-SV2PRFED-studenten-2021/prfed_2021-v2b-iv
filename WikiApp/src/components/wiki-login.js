@@ -19,15 +19,28 @@ class WikiLogin extends LitElement {
     width: 90%;
     padding: 12px;
     margin: 5px 0 22px 0;
-    border: none;
     background: #f1f1f1;
+    
+    max-width: 300px;
+    height: 2.3em;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-family: sans-serif;
+    padding: 0.4em 1em;
 }
 
 .form-container .button {
-    background-color: darkblue;
+    background-color: rgb(29 113 185);
     color: white;
-    width: 122px;
-    height: 30px;
+    
+    max-width: 300px;
+    height: 2.3em;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-family: sans-serif;
+    padding: 0.4em 1em;
 
 }
     `}
