@@ -44,7 +44,6 @@ class searchBar extends LitElement {
             }
 
             a {
-                list-style: none;
                 text-decoration: none;
             }
 
@@ -63,10 +62,17 @@ class searchBar extends LitElement {
             }
 
             li {
+                list-style: none;
                 padding-left: .5em;
                 padding-right: .5em;
                 margin-top: .7em;
                 margin-bottom: .7em;
+            }
+
+            li:hover {
+                background-color: #f5f5f5;
+                border-top: 1px solid #d4d4d4;
+                border-bottom: 1px solid #d4d4d4;
             }
     
     `}
@@ -124,20 +130,18 @@ class searchBar extends LitElement {
              class="search-input" type="text" id="zoekbalk" name="zoeken" placeholder="Doorzoek de wiki..." value=""
             >
             <div class="suggestie-container">
-            ${this.suggesties.map(artikel => html`
-            ${console.log(artikel)}
-            <a href="${urlParams + '/artikel?id=' + artikel.id}">
-                <li>
-                    <h3>${artikel.title}</h3>
-                    <p>${artikel.text}</h4>
-                </li>
-            </a>
-       
-        `)}
-        </div> 
+                ${this.suggesties.map(artikel => html`
+                ${console.log(artikel)}
+                <a href="${urlParams + '/artikel?id=' + artikel.id}">
+                    <li>
+                        <h3>${artikel.title}</h3>
+                        <p>${artikel.text}</h4>
+                    </li>
+                </a>
+        
+                `)}
+            </div> 
         </div>
-        
-        
         `
     }
 }
