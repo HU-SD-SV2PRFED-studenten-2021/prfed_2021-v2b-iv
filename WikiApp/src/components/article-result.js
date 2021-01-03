@@ -2,54 +2,6 @@ import {LitElement, html, css} from 'https://cdn.skypack.dev/lit-element@2.3.1'
 import getData from '../utils/get-data.js'
 
 class ArticleResult extends LitElement{
-    static get styles() {
-        return css`
-            div {
-            position: absolute;
-
-            right: 0;
-            margin-top: 39px;
-            width: 406px;
-            background-color: lightgrey;
-            border-radius: 6px;
-            overflow: hidden;
-                    display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-    }
-    }
-
-        .resultaten > ol {
-        list-style-type: none;
-        padding-left: 0;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .resultaten > ol > a {
-        color:black;
-        text-decoration: none;
-    }
-
-        .resultaten > ol > a > li{
-            color: #24292e !important;
-            padding: 2.5px;
-            font-size: 20px;
-            border-bottom: 1px solid #666;
-            cursor: pointer;
-    }
-
-        .resultaten > ol > a > li:hover{
-        background-color: #97CBFF;
-    }
-
-        .resultaten > ol > a > li > p{
-        color: #586069 !important;
-        font-size: 15px;
-    }
-
-        `
-    }
 
     static get properties() {
         return{
