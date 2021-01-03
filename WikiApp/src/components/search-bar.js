@@ -22,7 +22,7 @@ class searchBar extends LitElement {
                 font-size: .8em;
                 font-family: sans-serif;
                 padding: .4em 1em;
-                margin-right: 1.8em;
+                margin-right: 1.9em;
             }
             
             input::placeholder {
@@ -32,8 +32,8 @@ class searchBar extends LitElement {
             .suggestie-container {
                 position: absolute;
                 display: block;
-                right: 0;
-                margin-top: 39px;
+                right: 10px;
+                margin-top: 10px;
                 max-height: 25em;
                 width: 22em;
                 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
