@@ -8,41 +8,56 @@ class WikiLogin extends LitElement {
 
     static get styles() {
         return css`
+        fieldset {
+            display: flex;
+            flex-direction: column;
+            border: none;
+        }
 
-.form-container {
-    max-width: 250px;
-    padding: 10px;
-    background-color: white;
-}
+        #form-cont {
+            display: flex;
+            justify-content: center;
+        }
 
-.form-container input[type=email], .form-container input[type=password] {
-    width: 90%;
-    padding: 12px;
-    margin: 5px 0 22px 0;
-    background: #f1f1f1;
-     
-    max-width: 300px;
-    height: 2.3em;
-    border: none;
-    border-radius: 20px;
-    font-size: 0.8em;
-    font-family: sans-serif;
-    padding: 0.4em 1em;
-}
+        #btn-cont {
+            display: flex;
+            justify-content: flex-end;
+        }
 
-.form-container .button {
-    background-color: rgb(29 113 185);
-    color: white;
-    
-    max-width: 300px;
-    height: 2.3em;
-    border: none;
-    border-radius: 20px;
-    font-size: 0.8em;
-    font-family: sans-serif;
-    padding: 0.4em 1em;
+        label, legend {
+            display: none;
+        }
 
-}
+
+        h2 {
+            padding: 1em;
+        }
+
+        input {
+            padding: 12px;
+            margin: 5px 0 22px 0;
+            background: #f1f1f1;
+            
+            width: 500px;
+            height: 2.3em;
+            border: 1px solid #c5c5c5;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-family: sans-serif;
+            padding: 0.4em 1em;
+        }
+
+        .button {
+            background-color: rgb(29 113 185);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-family: sans-serif;
+            padding: .5em 1em;
+            height: min-content;
+
+        }
     `}
 
     constructor() {
@@ -51,14 +66,23 @@ class WikiLogin extends LitElement {
 
     render() {
         return html`
-        <div class="form-popup" id="myForm">
-             <form class="form-container" @submit=${this.login}>
-                 <h1>Inloggen</h1>
-                 <input id="email" type="email" placeholder="email" name="email" required>
-                 <input id="password" type="password" placeholder="wachtwoord" name="password" required>
-                 <button type="submit" class="button">Inloggen</button>
-             </form>
-        </div>
+            <h2>Inloggen Form</h2>
+            <div id="form-cont">
+                <form @submit=${this.login}>
+                    <fieldset>
+                        <legend>Inloggen form</legend>
+                        <input id="email-input" type="email" placeholder="email" name="email" required>
+                        <label for="email-input">Email input</label>
+
+                        <input id="password-input" type="password" placeholder="wachtwoord" name="password" required>
+                        <label for="password-input">Password input</label>
+
+                    </fieldset> 
+                    <div id="btn-cont">
+                        <button type="submit" class="button">Inloggen</button>
+                    </div>
+                </form>
+             </div>
         `
     }
     login(event){
