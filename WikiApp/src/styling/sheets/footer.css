@@ -46,3 +46,8 @@ footer > ul > * {
 #github-ref-cont:hover {
     background-color: #ebf6ff;
 }
+
+#github-ref-cont:active {
+    border-bottom: 4px solid rgb(101, 224, 255);
+    border-left: 2px solid rgb(101, 224, 255);
+}

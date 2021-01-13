@@ -15,11 +15,12 @@
             <img id="wiki-logo" src="./images/wiki-logo.png" alt="hbo-i Wiki logo">
         </a>
         <search-bar></search-bar>
-        <!-- <article-result></article-result> -->
+<!--        <article-result></article-result>-->
     </header>
     <nav>
         <a href="/login" class="nav-btn">Inloggen</a>
-        <button class="nav-btn">Voeg artikel toe</button>
+        <button class="nav-btn primary-btn">Inloggen</button>
+        <button class="nav-btn secondary-btn">Voeg artikel toe</button>
     </nav>
     </div>
     <main>
@@ -27,7 +28,7 @@
         <script type="module">
             import getData from "./utils/get-data.js"
             const indexView = document.querySelector('view-index')
-            const articleResult = document.querySelector('article-result')
+            const searchBar = document.querySelector('search-bar')
 
             getData('categories')
                 .then(({ categories }) => {
@@ -36,7 +37,7 @@
                 })
                 .then(articleData => {
                     indexView.articleData = articleData
-                    articleResult.articleData = articleData
+                    searchBar.articleData = articleData
                 })
 
             function openForm() {
