@@ -63,7 +63,7 @@ class categoryArticles extends LitElement{
         this.articleData = this.articleData.filter(category => category.name === this.category)
 
         return html`
-        <h1>Alle artikelen van de categorie ${this.category}</h1>
+        <h1>Alle artikelen van ${this.category}</h1>
         <div class="suggestie-container">
         ${this.articleData.map( category => html`
             ${category.artikelen.map( artikel => html`
