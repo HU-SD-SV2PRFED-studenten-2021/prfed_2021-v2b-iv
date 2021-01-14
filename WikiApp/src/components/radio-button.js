@@ -1,7 +1,22 @@
 import {LitElement, html, css} from 'https://cdn.skypack.dev/lit-element@2.3.1'
 
 const styles = css`
-
+    .radio-button-container{
+            margin-left: 5rem;
+    }
+    label{
+          margin-left: 50px;
+          font-size: 1em;
+          font-family: sans-serif;
+          font-weight: bold;
+          border-radius: 6px;
+          
+    
+    }
+        label:hover {
+          background-color: #f5f5f5;
+    }
+    
 
 `
 
@@ -49,11 +64,6 @@ class radioButton extends LitElement {
         this.dispatchEvent(event)
     }
 
-    check(s) {
-
-        if (s === 'All') return this.checked = true;
-        else return this.checked = false;
-    }
 
 
 
