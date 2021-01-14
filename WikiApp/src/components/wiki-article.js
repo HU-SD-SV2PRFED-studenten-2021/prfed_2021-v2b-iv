@@ -24,6 +24,10 @@ class WikiArtikel extends LitElement {
                 align-items: center;
             }
 
+            ul {
+                list-style: none;
+            }
+
             #titel-link {
                 text-decoration: none;
                 color: #000000;
@@ -54,9 +58,18 @@ class WikiArtikel extends LitElement {
                 <a id="titel-link" href="artikelen/${this.id}">
                     <h1 id="titel">${this.titel}</h1>
                 </a>
-                <a href="artikelen/geschiedenis/${this.id}">
-                    toon geschiedenis
-                </a>
+                <ul>
+                    <li>
+                        <a href="artikelen/geschiedenis/${this.id}">
+                            toon geschiedenis
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            bewerk artikel
+                        </a>
+                    </li>
+                </ul>
             </div>
 
             <p id="tekst">${this.tekst}</p>
