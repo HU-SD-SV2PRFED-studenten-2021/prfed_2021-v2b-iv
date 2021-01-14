@@ -14,7 +14,6 @@ class WikiArtikel extends LitElement {
     static get styles() {
         return css`
             .artikel-cont {
-                border: 0.1em solid rgb(46, 42, 42);
                 margin-top: 3em;
                 padding: 1em;
             }
