@@ -13,9 +13,24 @@ class WikiArtikel extends LitElement {
 
     static get styles() {
         return css`
-            .artikel-cont {
-                margin-top: 3em;
-                padding: 1em;
+            #artikel-cont {
+                padding: 1.5em;
+            }
+
+            #artikel-header-cont {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            #titel-link {
+                text-decoration: none;
+                color: #000000;
+            } 
+
+            #titel-link:hover {
+                text-decoration: underline;
             }
         `;
     }
@@ -34,15 +49,18 @@ class WikiArtikel extends LitElement {
 
     render() {
         return html`
-            <div class="artikel-cont">
-            
-            <h1>
-                <a href="artikelen/${this.id}">
-                    <slot name="titel">${this.titel}</slot>
+        <div id="artikel-cont">
+            <div id="artikel-header-cont">
+                <a id="titel-link" href="artikelen/${this.id}">
+                    <h1 id="titel">${this.titel}</h1>
                 </a>
-            </h1>
-                <slot name="tekst">${this.tekst}</slot>
+                <a href="artikelen/geschiedenis/${this.id}">
+                    toon geschiedenis
+                </a>
             </div>
+
+            <p id="tekst">${this.tekst}</p>
+        </div>
         `;
     }
 }
