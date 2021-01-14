@@ -10,6 +10,18 @@ const styles = css`
         box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
         transition: box-shadow 300ms;           
     }
+    a {
+        padding: 5px;
+        text-align: center;
+        margin: 0;
+        border-top: 1px solid rgb(207 207 207 / 84%);
+    }
+
+
+  a {
+        text-decoration: none;
+        color: black;
+    }
 `
 
 
@@ -28,7 +40,9 @@ class categoryList extends LitElement {
 
     render() {
         return html`
-      <h2>${this.listTitle}</h2>
+      <a href="category?category=${this.listTitle}">
+        <h2>${this.listTitle}</h2>
+      </a>
       <div>
         <slot />
       </div>

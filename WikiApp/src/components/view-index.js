@@ -82,8 +82,6 @@ class viewIndex extends LitElement {
                     rol = ${artikel.rol}>
                  </wk-article>
                         `)}
-                <category-redirect category="${category.name}">
-                </category-redirect>
             </category-list>
         </div>
       `)}
