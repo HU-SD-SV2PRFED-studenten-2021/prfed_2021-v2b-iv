@@ -115,6 +115,7 @@ class searchBar extends LitElement {
     redirect(e) {
         if (e.key === 'Enter') {
             const urlParam = new URLSearchParams(window.location.search);
+            urlParam.delete('value');
             let url = urlParam + '/zoekPagina?value=' + this.inputValue;
             window.location = url;
         }
