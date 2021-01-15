@@ -54,45 +54,6 @@ class viewIndex extends LitElement {
         this.filter_ = filterElement.categories;
 
     }
-    filterChanged(e) {
-        this.filter = e.target.value;
-        console.log(this.filter);
-        // console.log(this.articleData.map(category => category.artikelen.map()))
-
-    }
-    // update(changedProperties) {
-    //     if (
-    //         changedProperties.has('filter')
-    //
-    //     ) {
-    //         this.articleData = this.applyFilter(this.articleData)
-    //     }
-    // }
-
-    applyFilter(category) {
-        switch (this.filter) {
-            case VisibilityFilter.SHOW_ANALYSEREN:
-                return category.artikelen.filter(artikel => artikel.rol = 'analyseren');
-            case VisibilityFilter.SHOW_ADVIESEREN:
-                return category.artikelen.filter(artikel => artikel.rol = 'advieseren');
-            case VisibilityFilter.SHOW_ONTWERPEN:
-                return category.artikelen.filter(artikel => artikel.rol = 'ontwerpen');
-            case VisibilityFilter.SHOW_REALISEREN:
-                return category.artikelen.filter(artikel => artikel.rol = 'realiseren');
-            case VisibilityFilter.SHOW_MANAGE:
-                return category.artikelen.filter(artikel => artikel.rol = 'manage & control');
-            default:
-                return category;
-        }
-
-    }
-    // update(changedProperties){
-    //     if(
-    //         changedProperties.has('filter_')
-    //
-    //     ){
-    //     this.artikelList = this.applyFilter(category)
-    // }}
 
 
     render() {
