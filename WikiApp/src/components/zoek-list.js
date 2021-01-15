@@ -56,6 +56,7 @@ class searchArtikelen extends LitElement {
     render() {
         const urlParams = new URLSearchParams(window.location.search);
         let inputValue = urlParams.get('value');
+        urlParams.delete('value');
         return html`
             <div class="suggestie-container">
                 ${filterSuggesties(inputValue,this.articleData).map(artikel => html`
