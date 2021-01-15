@@ -16,6 +16,23 @@
     </a>
     <search-bar></search-bar>
     <!-- <article-result></article-result> -->
+    <script type="module">
+        import getData from "./utils/get-data.js"
+        const searchBar = document.querySelector('search-bar')
+
+        getData('categories')
+            .then(({ categories }) => {
+                const categoryPromises = categories.map(category => getData(category))
+                return Promise.all(categoryPromises)
+            })
+            .then(articleData => {
+                searchBar.articleData = articleData
+            })
+
+        function openForm() {
+            console.log('open form')
+        }
+    </script>
 </header>
 <nav>
     <a href="/login" class="nav-btn">Inloggen</a>
