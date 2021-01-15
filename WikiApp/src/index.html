@@ -4,21 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styling/style.css">
+
     <title>Hbo-i Wiki website</title>
 </head>
 
 <body>
     <header>
         <h1 id="titel-heading">hbo-i Wiki website</h1>
-        <a href="#">
+        <a id="wiki-logo-cont" href="https://fep-wiki-project-v2b-iv.herokuapp.com">
             <img id="wiki-logo" src="./images/wiki-logo.png" alt="hbo-i Wiki logo">
         </a>
-        <search-bar></search-bar>
+        <search-bar id="search-bar"></search-bar>
+        <div id="toon-sb-btn">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/></svg>
+        </div>
 <!--        <article-result></article-result>-->
     </header>
     <nav>
-        <button class="nav-btn primary-btn">Inloggen</button>
-        <button class="nav-btn secondary-btn">Voeg artikel toe</button>
+        <form action="/login">
+            <button class="nav-btn primary-btn">Inloggen</button>
+        </form>
+        <form>
+            <button class="nav-btn secondary-btn">Voeg artikel toe</button>
+        </form>
     </nav>
     <main>
         <view-index></view-index>
@@ -36,6 +44,10 @@
                     indexView.articleData = articleData
                     searchBar.articleData = articleData
                 })
+
+            function openForm() {
+                console.log('open form')
+            }
         </script>
     </main>
     <footer>
@@ -61,4 +73,24 @@
     </footer>
     <script type="module" src="main.js"></script>
 </body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<!--<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>-->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!--
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBD2gup-WRDVBR-JKiWvIvFNV7dCWxwkYc",
+        authDomain: "fep2wiki.firebaseapp.com",
+        projectId: "fep2wiki",
+        storageBucket: "fep2wiki.appspot.com",
+        messagingSenderId: "193709243496",
+        appId: "1:193709243496:web:6221f732d66684e6e04fdd"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>-->
 </html>
