@@ -11,7 +11,7 @@
 <body>
     <header>
         <h1 id="titel-heading">hbo-i Wiki website</h1>
-        <a id="wiki-logo-cont" href="#">
+        <a id="wiki-logo-cont" href="https://fep-wiki-project-v2b-iv.herokuapp.com">
             <img id="wiki-logo" src="./images/wiki-logo.png" alt="hbo-i Wiki logo">
         </a>
         <search-bar id="search-bar"></search-bar>
@@ -21,9 +21,12 @@
 <!--        <article-result></article-result>-->
     </header>
     <nav>
-        <a href="/login" class="nav-btn">Inloggen</a>
-        <button class="nav-btn primary-btn">Inloggen</button>
-        <button class="nav-btn secondary-btn">Voeg artikel toe</button>
+        <form action="/login">
+            <button class="nav-btn primary-btn">Inloggen</button>
+        </form>
+        <form>
+            <button class="nav-btn secondary-btn">Voeg artikel toe</button>
+        </form>
     </nav>
     <main>
         <view-index></view-index>
