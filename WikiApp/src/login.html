@@ -17,6 +17,19 @@
 </div>
 <main>
     <wiki-login></wiki-login>
+    <script type="module">
+        import getData from "./utils/get-data.js"
+        const wikiHeader = document.querySelector('wiki-header')
+
+        getData('categories')
+            .then(({ categories }) => {
+                const categoryPromises = categories.map(category => getData(category))
+                return Promise.all(categoryPromises)
+            })
+            .then(articleData => {
+                wikiHeader.articleData = articleData
+            })
+    </script>
 
 </main>
 <footer>
