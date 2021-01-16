@@ -47,7 +47,7 @@ class WikiArtikel extends LitElement {
             .then(article => {
                 this.titel = article.title;
                 this.tekst = JSON.parse(JSON.stringify(article.text));
-                    });
+        });
     }
 
 
@@ -55,12 +55,12 @@ class WikiArtikel extends LitElement {
         return html`
         <div id="artikel-cont">
             <div id="artikel-header-cont">
-                <a id="titel-link" href="artikelen/${this.id}">
+                <a id="titel-link" href="/artikel?id=${this.id}">
                     <h1 id="titel">${this.titel}</h1>
                 </a>
                 <ul>
                     <li>
-                        <a href="artikelen/geschiedenis/${this.id}">
+                        <a href="/geschiedenis?id=${this.id}">
                             toon geschiedenis
                         </a>
                     </li>
