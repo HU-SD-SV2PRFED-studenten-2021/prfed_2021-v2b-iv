@@ -97,6 +97,7 @@ class ArtikelHistory extends LitElement {
                             title=${versie.title}
                             tekst=${versie.tekst}
                             date=${versie.date}
+                            time=${versie.time}
                             ?collapsed=${versie.collapsed}
                             username=${versie.editor.username}                        
                             @onToggle=${this._toggleCollapesed}>                    
