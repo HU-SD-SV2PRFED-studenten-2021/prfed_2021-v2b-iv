@@ -11,16 +11,11 @@ const styles = css`
         transition: box-shadow 300ms;           
     }
     a {
+        text-decoration: none;
+        color: black;
         padding: 5px;
         text-align: center;
         margin: 0;
-        border-top: 1px solid rgb(207 207 207 / 84%);
-    }
-
-
-  a {
-        text-decoration: none;
-        color: black;
     }
 `
 
@@ -40,14 +35,16 @@ class categoryList extends LitElement {
 
     render() {
         return html`
-      <a href="category?category=${this.listTitle}">
-        <h2>${this.listTitle}</h2>
-      </a>
-      <div>
-        <slot />
-      </div>
+        <h2>
+            <a href="category?category=${this.listTitle}">
+                ${this.listTitle}
+            </a>   
+        </h2>
+        <div>
+            <slot />
+        </div>
     `
     }
 }
 
-window.customElements.define('category-list', categoryList);
+window.customElements.define('category-list', categoryList)
