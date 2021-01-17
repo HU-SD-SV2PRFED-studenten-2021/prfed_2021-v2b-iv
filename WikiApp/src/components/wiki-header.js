@@ -64,11 +64,10 @@ class wikiHeader extends LitElement {
     `
     }
 
-    static get properties() { return {
-        articleData: {
-            type:Array
+    static get properties() {
+        return {
+            articleData: { type:Array }
         }
-    }
     }
 
 
@@ -82,7 +81,7 @@ class wikiHeader extends LitElement {
 
 
         <h1 id="titel-heading">hbo-i Wiki website</h1>
-        <a id="wiki-logo-cont" href="https://fep-wiki-project-v2b-iv.herokuapp.com">
+        <a id="wiki-logo-cont" href="/">
             <img id="wiki-logo" src=".././images/wiki-logo.png" alt="hbo-i Wiki logo">
         </a>
         <search-bar id="search-bar" .articleData = ${this.articleData}></search-bar>
