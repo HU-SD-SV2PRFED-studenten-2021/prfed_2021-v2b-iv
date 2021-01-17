@@ -10,8 +10,12 @@
 <body>
 <wiki-header></wiki-header>
 <nav>
-    <button class="nav-btn">Inloggen</button>
-    <button class="nav-btn">Voeg artikel toe</button>
+    <form action="/login">
+        <button class="nav-btn primary-btn">Inloggen</button>
+    </form>
+    <form>
+        <button class="nav-btn secondary-btn">Voeg artikel toe</button>
+    </form>
 </nav>
 <main>
     <search-artikelen></search-artikelen>
