@@ -87,7 +87,7 @@ class Footer extends LitElement {
         <p>We zijn Open Source! Kijk ons project eens op
              <a id="repo-link" class="footer-links" href="https://github.com/HU-SD-SV2PRFED-studenten-2021/prfed_2021-v2b-iv">
                  <span id="github-ref-cont">
-                 Github 
+                    Github 
                     <img id="github-logo" src="./images/github-logo.png" alt="Github logo">
                  </span>
              </a>
