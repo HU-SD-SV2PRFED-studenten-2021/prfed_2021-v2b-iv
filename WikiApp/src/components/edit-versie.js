@@ -123,7 +123,7 @@ class EditVersion extends LitElement {
     render() {
         return html`
             <li>
-                <div class="item" @click=${() => this._fire('onToggle')}>
+                <div class="item"  @click=${() => this._fire('onToggle')} @key=${() => this._fire('onToggle')}>
                     <div class="edit-username">${this.username}</div>                
                     <div class="edit-date">${this.date}, ${this.time}</div>
                     <div class="arrow-box">
@@ -131,7 +131,7 @@ class EditVersion extends LitElement {
                     </div>
                 </div>
 
-                <div class="slider ${ this.collapsed ? '' : 'collapsed'}">
+                <div class="slider ${ this.collapsed ? '' : 'collapsed'}" tabindex="1">
                     <div class="edit-cont">
                         <h3>${this.title}</h3>
                         <p>${this.tekst}</p>

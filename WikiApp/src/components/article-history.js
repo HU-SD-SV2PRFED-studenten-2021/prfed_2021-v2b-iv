@@ -77,14 +77,14 @@ class ArtikelHistory extends LitElement {
 
     render() {
         return html`
-            <div class="geschiedenis-cont">
+            <div class="geschiedenis-cont" tabindex="1">
                 <h2>Bewerkgeschiedenis</h2>
                 <div class="list-cont">
                     <div class="def">
-                        <h3>
+                        <h3 tabindex="2">
                             Username
                         </h3>
-                        <h3>
+                        <h3 tabindex="3">
                             Bewerkingsdatum
                         </h3>
                         <h3 id="placeholder">
@@ -92,18 +92,18 @@ class ArtikelHistory extends LitElement {
                     </div>
                     <ul class="edits-list">
                         ${this.versies.map((versie, index) => html`                    
-                        <edit-versie
-                            tabindex=${index}
-                            .index=${index}
-                            title=${versie.title}
-                            tekst=${versie.tekst}
-                            date=${versie.date}
-                            time=${versie.time}
-                            ?collapsed=${versie.collapsed}
-                            username=${versie.editor.username}                        
-                            @onToggle=${this._toggleCollapesed}>                    
-                        </edit-versie>
-                        `
+                            <edit-versie
+                                tabindex="${4 + index}"
+                                .index=${index}
+                                title=${versie.title}
+                                tekst=${versie.tekst}
+                                date=${versie.date}
+                                time=${versie.time}
+                                ?collapsed=${versie.collapsed}
+                                username=${versie.editor.username}                        
+                                @onToggle=${this._toggleCollapesed}>                    
+                            </edit-versie>
+                            `                        
                         )}
                     </ul>
                 </div>
