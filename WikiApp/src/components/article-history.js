@@ -78,13 +78,13 @@ class ArtikelHistory extends LitElement {
     render() {
         return html`
             <div class="geschiedenis-cont" tabindex="1">
-                <h2>Bewerkgeschiedenis</h2>
+                <h2 tabindex="2">Bewerkgeschiedenis</h2>
                 <div class="list-cont">
                     <div class="def">
-                        <h3 tabindex="2">
+                        <h3 tabindex="3">
                             Username
                         </h3>
-                        <h3 tabindex="3">
+                        <h3 tabindex="4">
                             Bewerkingsdatum
                         </h3>
                         <h3 id="placeholder">
@@ -93,7 +93,6 @@ class ArtikelHistory extends LitElement {
                     <ul class="edits-list">
                         ${this.versies.map((versie, index) => html`                    
                             <edit-versie
-                                tabindex="${4 + index}"
                                 .index=${index}
                                 title=${versie.title}
                                 tekst=${versie.tekst}

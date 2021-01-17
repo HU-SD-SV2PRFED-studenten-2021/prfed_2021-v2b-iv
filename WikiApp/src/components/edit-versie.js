@@ -112,18 +112,21 @@ class EditVersion extends LitElement {
 
 
     _fire(e) {
-        console.log(this.index)
         this.dispatchEvent(new CustomEvent(e, { detail: this.index }));
     }
 
 
 
-
+    _handleEnterKeypress(e) {
+        if (e.key === 'Enter') { 
+            this._fire('onToggle');
+          }
+    }
 
     render() {
         return html`
             <li>
-                <div class="item"  @click=${() => this._fire('onToggle')} @key=${() => this._fire('onToggle')}>
+                <div class="item"  @click=${() => this._fire('onToggle')} @keyup="${this._handleEnterKeypress}" tabindex="1">
                     <div class="edit-username">${this.username}</div>                
                     <div class="edit-date">${this.date}, ${this.time}</div>
                     <div class="arrow-box">
@@ -131,7 +134,7 @@ class EditVersion extends LitElement {
                     </div>
                 </div>
 
-                <div class="slider ${ this.collapsed ? '' : 'collapsed'}" tabindex="1">
+                <div class="slider ${ this.collapsed ? '' : 'collapsed'}" tabindex="2">
                     <div class="edit-cont">
                         <h3>${this.title}</h3>
                         <p>${this.tekst}</p>
