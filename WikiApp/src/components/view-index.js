@@ -6,6 +6,12 @@ import getData from "../utils/get-data.js";
 class viewIndex extends LitElement {
     static get styles() {
         return css`
+
+            :host {
+                display: flex;
+                flex-direction: column;            
+            }
+            
             .category-container {
                 display: flex;
                 flex-flow: row wrap;

@@ -10,7 +10,7 @@ class Footer extends LitElement {
         :host {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: center;
             grid-area: footer;
             background-color: rgb(28 63 93);
             color: #bce0ff;
