@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,16 +14,20 @@
     <button class="nav-btn">Voeg artikel toe</button>
 </nav>
 <main>
-    <search-artikelen></search-artikelen>
+    <category-articles></category-articles>
+    <script type="module" src="main.js"></script>
     <script type="module">
         import getData from "./utils/get-data.js"
-        const searchArtikelen = document.querySelector('search-artikelen')
-        const wikiHeader = document.querySelector('wiki-header')
+
+        const viewProduct = document.querySelector('category-articles')
         const urlParams = new URLSearchParams(window.location.search);
-        const zoekValue = urlParams.get('value');
+        const category = urlParams.get('category');
+        const wikiHeader = document.querySelector('wiki-header')
 
 
-        searchArtikelen.setAttribute('zoekValue', zoekValue)
+        viewProduct.setAttribute('category', category);
+
+        const categoryArticles = document.querySelector('category-articles')
 
         getData('categories')
             .then(({ categories }) => {
@@ -31,8 +35,9 @@
                 return Promise.all(categoryPromises)
             })
             .then(articleData => {
-                searchArtikelen.articleData = articleData
+                categoryArticles.articleData = articleData
                 wikiHeader.articleData = articleData
+
             })
     </script>
 </main>

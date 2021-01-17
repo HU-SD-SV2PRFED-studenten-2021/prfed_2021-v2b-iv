@@ -114,14 +114,15 @@ class searchBar extends LitElement {
     }
     redirect(e) {
         if (e.key === 'Enter') {
-            const urlParam = new URLSearchParams(window.location.search);
-            let url = urlParam + '/zoekPagina?value=' + this.inputValue;
+            // const urlParam = new URLSearchParams(window.location.search);
+            // // urlParam.delete('value');
+            let url = '/zoekPagina?value=' + this.inputValue;
             window.location = url;
         }
     }
 
     render() {
-        const urlParams = new URLSearchParams(window.location.search);
+        // const urlParams = new URLSearchParams(window.location.search);
         return html`
         <div class="zoeken-container">
             <label for="zoekbalk"></label>
@@ -131,7 +132,7 @@ class searchBar extends LitElement {
             <div class="suggestie-container">
                 ${this.suggesties.map(artikel => html`
                 ${console.log(artikel)}
-                <a href="${urlParams + '/artikel?id=' + artikel.id}">
+                <a href="${'/artikel?id=' + artikel.id}">
                     <li>
                         <h3>${artikel.title}</h3>
                         <p>${artikel.text}</h4>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,28 +9,21 @@
 </head>
 
 <body>
-    <header>
-        <h1 id="titel-heading">hbo-i Wiki website</h1>
-        <a id="wiki-logo-cont" href="#">
-            <img id="wiki-logo" src="./images/wiki-logo.png" alt="hbo-i Wiki logo">
-        </a>
-        <search-bar id="search-bar"></search-bar>
-        <div id="toon-sb-btn">
-            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/></svg>
-        </div>
-<!--        <article-result></article-result>-->
-    </header>
+    <wiki-header></wiki-header>
     <nav>
-        <a href="/login" class="nav-btn">Inloggen</a>
-        <button class="nav-btn primary-btn">Inloggen</button>
-        <button class="nav-btn secondary-btn">Voeg artikel toe</button>
+        <form action="/login">
+            <button class="nav-btn primary-btn">Inloggen</button>
+        </form>
+        <form>
+            <button class="nav-btn secondary-btn">Voeg artikel toe</button>
+        </form>
     </nav>
     <main>
         <view-index></view-index>
         <script type="module">
             import getData from "./utils/get-data.js"
             const indexView = document.querySelector('view-index')
-            const searchBar = document.querySelector('search-bar')
+            const wikiHeader = document.querySelector('wiki-header')
 
             getData('categories')
                 .then(({ categories }) => {
@@ -39,7 +32,7 @@
                 })
                 .then(articleData => {
                     indexView.articleData = articleData
-                    searchBar.articleData = articleData
+                    wikiHeader.articleData = articleData
                 })
 
             function openForm() {
@@ -47,47 +40,7 @@
             }
         </script>
     </main>
-    <footer>
-        <p>We zijn Open Source! Kijk ons project eens op <a id="repo-link" class="footer-links" href="https://github.com/HU-SD-SV2PRFED-studenten-2021/prfed_2021-v2b-iv"><span id="github-ref-cont">Github <img id="github-logo" src="./images/github-logo.png" alt="Github logo"></span></a></p> 
-
-        <ul>
-            <li>
-                <a class="footer-links" href="#">
-                    Privacy Policy
-                </a>
-            </li>
-            <li>
-                <a class="footer-links" href="#">
-                    Terms of Service
-                </a>
-            </li>
-            <li>
-                <a  class="footer-links" href="#">
-                    About
-                </a>
-            </li>
-        </ul>
-    </footer>
+    <wiki-footer></wiki-footer>
     <script type="module" src="main.js"></script>
 </body>
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<!--<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>-->
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<!--
-<script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyBD2gup-WRDVBR-JKiWvIvFNV7dCWxwkYc",
-        authDomain: "fep2wiki.firebaseapp.com",
-        projectId: "fep2wiki",
-        storageBucket: "fep2wiki.appspot.com",
-        messagingSenderId: "193709243496",
-        appId: "1:193709243496:web:6221f732d66684e6e04fdd"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-</script>-->
 </html>
