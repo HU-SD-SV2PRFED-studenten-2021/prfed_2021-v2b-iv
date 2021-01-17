@@ -1,17 +1,41 @@
 import {LitElement, html, css} from 'https://cdn.skypack.dev/lit-element@2.3.1'
 
 const styles = css`
-    label{
-          margin-left: 50px;
-          font-size: 1em;
-          font-family: sans-serif;
-          font-weight: bold;
-          border-radius: 6px;
-          
-    
+    .radio-button-container {
+        display: flex;
+        flex-direction: row;
+        padding: .5em 1.5em 1.7em 1.5em;
     }
-        label:hover {
-          background-color: #f5f5f5;
+
+    legend {
+        display: none;
+    }
+
+    form {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .filter-rb-cont {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 35px;
+        width: min-content;
+    }
+    
+
+    label {
+        font-size: 1em;
+        font-family: sans-serif;
+        font-weight: bold;
+        margin-left: .4em;
+        user-select: none;
+    }
+
+    .filter-rb-cont:hover {
+        background-color: #e4e4e4;
     }
     
 
@@ -65,18 +89,20 @@ class radioButton extends LitElement {
 
 
     render() {
-        return html`
-        <div class="radio-button-container" value="${this.filter}"
+        return html`        
+        <legend for="rb-filter">Categorien filter</legend>
+        <form id="rb-filter" class="radio-button-container" value="${this.filter}"
                 @change="${this.filterChanged}">
             
             ${Object.values(VisibilityFilter).map(filter =>
                  html`
-                    <label> ${filter}
-                        <input type="radio" name="filter" value="${filter}"  checked  @change="${this.emitChange()}" />
-                    </label>
+                    <div class="filter-rb-cont">
+                        <label for=${filter}>${filter}</label>  
+                        <input type="radio" name="filter" id=${filter} value="${filter}"  checked  @change="${this.emitChange()}" />
+                    </div>
                    `
         )}
-        </div>
+        </form>
         `;
     }
 
