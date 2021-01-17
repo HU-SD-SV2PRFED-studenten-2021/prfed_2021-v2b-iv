@@ -73,7 +73,8 @@ class EditVersion extends LitElement {
 
             .slider {
                 height: min-content;
-                overflow-y: hidden;
+                max-height: 450px;
+                overflow-y: scroll;
                 padding: 1.3em;
                 margin: .3em;
                 margin-bottom: 1em;

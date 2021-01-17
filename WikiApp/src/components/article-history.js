@@ -93,6 +93,7 @@ class ArtikelHistory extends LitElement {
                     <ul class="edits-list">
                         ${this.versies.map((versie, index) => html`                    
                         <edit-versie
+                            tabindex=${index}
                             .index=${index}
                             title=${versie.title}
                             tekst=${versie.tekst}
