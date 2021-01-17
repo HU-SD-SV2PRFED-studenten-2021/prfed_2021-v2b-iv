@@ -8,14 +8,7 @@
 </head>
 
 <body>
-<header>
-    <h1 id="titel-heading">hbo-i Wiki website</h1>
-    <a href="#">
-        <img id="wiki-logo" src="./images/wiki-logo.png" alt="hbo-i Wiki logo">
-    </a>
-    <search-bar></search-bar>
-    <!--        <article-result></article-result>-->
-</header>
+<wiki-header></wiki-header>
 <nav>
     <button class="nav-btn">Inloggen</button>
     <button class="nav-btn">Voeg artikel toe</button>
@@ -25,7 +18,7 @@
     <script type="module">
         import getData from "./utils/get-data.js"
         const searchArtikelen = document.querySelector('search-artikelen')
-        const searchBar = document.querySelector('search-bar')
+        const wikiHeader = document.querySelector('wiki-header')
         const urlParams = new URLSearchParams(window.location.search);
         const zoekValue = urlParams.get('value');
 
@@ -39,7 +32,7 @@
             })
             .then(articleData => {
                 searchArtikelen.articleData = articleData
-                searchBar.articleData = articleData
+                wikiHeader.articleData = articleData
             })
     </script>
 </main>

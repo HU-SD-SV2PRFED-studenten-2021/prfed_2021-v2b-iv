@@ -9,17 +9,7 @@
 </head>
 
 <body>
-    <header>
-        <h1 id="titel-heading">hbo-i Wiki website</h1>
-        <a id="wiki-logo-cont" href="https://fep-wiki-project-v2b-iv.herokuapp.com">
-            <img id="wiki-logo" src="./images/wiki-logo.png" alt="hbo-i Wiki logo">
-        </a>
-        <search-bar id="search-bar"></search-bar>
-        <div id="toon-sb-btn">
-            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/></svg>
-        </div>
-<!--        <article-result></article-result>-->
-    </header>
+    <wiki-header></wiki-header>
     <nav>
         <form action="/login">
             <button class="nav-btn primary-btn">Inloggen</button>
@@ -33,7 +23,7 @@
         <script type="module">
             import getData from "./utils/get-data.js"
             const indexView = document.querySelector('view-index')
-            const searchBar = document.querySelector('search-bar')
+            const wikiHeader = document.querySelector('wiki-header')
 
             getData('categories')
                 .then(({ categories }) => {
@@ -42,7 +32,7 @@
                 })
                 .then(articleData => {
                     indexView.articleData = articleData
-                    searchBar.articleData = articleData
+                    wikiHeader.articleData = articleData
                 })
 
             function openForm() {
@@ -50,9 +40,7 @@
             }
         </script>
     </main>
-
     <wiki-footer></wiki-footer>
-
     <script type="module" src="main.js"></script>
 </body>
 </html>
