@@ -20,7 +20,7 @@
 }
 
 .nav-btn:active {
-    border: 3px solid black;
+    outline: 2px solid black;
 }
 
 .nav-btn {
