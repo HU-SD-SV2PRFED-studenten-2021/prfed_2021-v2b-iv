@@ -7,8 +7,14 @@ import './components/category-list.js'
 import './components/wk-article.js'
 import './components/radio-button.js'
 import './components/zoek-list.js'
+<<<<<<< HEAD
+import './components/article-history.js'
+import './components/edit-versie.js'
+import './search-bar.js'
+=======
 import './components/category-articles.js'
 import './components/category-redirect.js'
 import './search-bar.js'
 import './components/wiki-header.js'
 import './components/wiki-footer.js'
+>>>>>>> development

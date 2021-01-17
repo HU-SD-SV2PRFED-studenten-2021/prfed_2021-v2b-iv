@@ -13,10 +13,28 @@ class WikiArtikel extends LitElement {
 
     static get styles() {
         return css`
-            .artikel-cont {
-                border: 0.1em solid rgb(46, 42, 42);
-                margin-top: 3em;
-                padding: 1em;
+            #artikel-cont {
+                padding: 1.5em;
+            }
+
+            #artikel-header-cont {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            #titel-link {
+                text-decoration: none;
+                color: #000000;
+            } 
+
+            #titel-link:hover {
+                text-decoration: underline;
             }
         `;
     }
@@ -29,21 +47,33 @@ class WikiArtikel extends LitElement {
             .then(article => {
                 this.titel = article.title;
                 this.tekst = JSON.parse(JSON.stringify(article.text));
-                    });
+        });
     }
 
 
     render() {
         return html`
-            <div class="artikel-cont">
-            
-            <h1>
-                <a href="artikelen/${this.id}">
-                    <slot name="titel">${this.titel}</slot>
+        <div id="artikel-cont">
+            <div id="artikel-header-cont">
+                <a id="titel-link" href="/artikel?id=${this.id}">
+                    <h1 id="titel">${this.titel}</h1>
                 </a>
-            </h1>
-                <slot name="tekst">${this.tekst}</slot>
+                <ul>
+                    <li>
+                        <a href="/geschiedenis?id=${this.id}">
+                            toon geschiedenis
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            bewerk artikel
+                        </a>
+                    </li>
+                </ul>
             </div>
+
+            <p id="tekst">${this.tekst}</p>
+        </div>
         `;
     }
 }
