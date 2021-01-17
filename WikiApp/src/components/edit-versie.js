@@ -54,6 +54,7 @@ class EditVersion extends LitElement {
                 margin: .6em 0;
                 background: #f1f1f1;
                 margin-bottom: 0px;
+                user-select: none;
             }
 
             .arrow-box {
