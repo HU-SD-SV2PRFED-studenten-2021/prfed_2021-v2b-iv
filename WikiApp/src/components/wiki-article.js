@@ -44,6 +44,7 @@ class WikiArtikel extends LitElement {
             </h1>
                 <slot name="tekst">${this.tekst}</slot>
             </div>
+            <delete-article titel="${this.titel}"></delete-article>
         `;
     }
 }
