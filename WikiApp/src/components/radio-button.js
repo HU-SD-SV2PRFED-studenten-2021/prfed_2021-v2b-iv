@@ -1,9 +1,6 @@
 import {LitElement, html, css} from 'https://cdn.skypack.dev/lit-element@2.3.1'
 
 const styles = css`
-    .radio-button-container{
-            margin-left: 5rem;
-    }
     label{
           margin-left: 50px;
           font-size: 1em;
