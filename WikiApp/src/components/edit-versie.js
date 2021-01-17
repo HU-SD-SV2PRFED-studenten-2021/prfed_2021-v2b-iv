@@ -136,8 +136,8 @@ class EditVersion extends LitElement {
 
                 <div class="slider ${ this.collapsed ? '' : 'collapsed'}" tabindex="2">
                     <div class="edit-cont">
-                        <h3>${this.title}</h3>
-                        <p>${this.tekst}</p>
+                        <h3 tabindex="3">${this.title}</h3>
+                        <p tabindex="4">${this.tekst}</p>
                     </div>
                 </div>
             </li>
