@@ -74,19 +74,26 @@ class EditVersion extends LitElement {
                 height: min-content;
                 overflow-y: hidden;
                 padding: 1.3em;
-                margin: .6em;
+                margin: .3em;
                 margin-bottom: 1em;
                 margin-top: 0;
                 border: 1px solid #969696;
                 border-top: 0;
                 border-bottom-left-radius: 7px;
                 border-bottom-right-radius: 7px;
+                transition: linear .1s;
+                background: #ffffff;
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
             }
             .collapsed {
                 height: 0;
                 padding: 0;
                 margin: 0;
                 border: 0;
+                margin-left: .3em;
+                margin-right: .3em;
+                box-shadow: none;
+                transition: linear .1s
             }
         `
     }
