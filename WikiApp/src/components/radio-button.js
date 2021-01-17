@@ -4,9 +4,12 @@ const styles = css`
     .radio-button-container {
         display: flex;
         flex-direction: row;
-        padding: .5em 1.5em 1.7em 1.5em;
+        padding: .5em 1.5em 1.7em 1.5em;    
     }
 
+    label, input {
+        cursor: pointer;
+    }
     legend {
         display: none;
     }
