@@ -60,18 +60,6 @@ class Footer extends LitElement {
             border-bottom: 4px solid rgb(101, 224, 255);
             border-left: 2px solid rgb(101, 224, 255);
         }
-        
-        @media only screen and (max-width: 768px) {
-            /* For mobile phones: */
-            footer {
-                flex-direction: column;
-            }
-            
-            ul {
-                padding-left: 0;
-            }
-        }
-        
         `
     }
 
