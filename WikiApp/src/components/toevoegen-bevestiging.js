@@ -184,10 +184,9 @@ class toevoegenBevestiging extends LitElement {
             
         }
         .submit:hover{
-                    background-color: #7FFFD4;
-                    border: 1px solid #7FFFD4;
+            opacity: .9;
         }
-            `
+    `
     }
 
     static get properties() {
