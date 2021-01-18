@@ -5,6 +5,7 @@ class ArtikelHistory extends LitElement {
     static get properties() {
         return {
             id: { type: String, attribute: 'id', reflect: true },
+            category: {attribute: 'category'},
             versies: { type: Array }
         }
     }
@@ -14,14 +15,21 @@ class ArtikelHistory extends LitElement {
     }
 
     firstUpdated() {
-        getData('articles')
-        .then(({articles}) => articles.find(article => article.id === this.id))
-        .then(article => 
-            this.versies = article.geschiedenis)
-        .then(() =>{
-            this.versies.forEach(versie => {
-                versie.collapsed = true;
-        })});
+        getData('categories')
+            .then(({categories}) => {
+                const categoryPromises = categories.map(category => getData(category))
+                return Promise.all(categoryPromises)
+            })
+            .then(articleData => {
+                const categoryLijst = articleData.find(category => category.id === this.category)
+                const artikel = categoryLijst.artikelen.find(artikel => artikel.id === this.id)
+                console.log(artikel)
+
+                this.versies = artikel.geschiedenis
+                this.versies.forEach(versie => {
+                    versie.collapsed = false;
+                })
+            })
     }
 
 

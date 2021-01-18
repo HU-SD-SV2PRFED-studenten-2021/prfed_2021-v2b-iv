@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.skypack.dev/lit-element@2.3.1';
 import getData from "../utils/get-data.js";
+import artikelData from "../utils/article-data.js";
 
 class WikiArtikel extends LitElement {
     static get properties() {
@@ -42,12 +43,33 @@ class WikiArtikel extends LitElement {
     connectedCallback() {
         super.connectedCallback();
 
-        getData('articles')
-            .then(({articles}) => articles.find(article => article.id === this.id))
-            .then(article => {
-                this.titel = article.title;
-                this.tekst = JSON.parse(JSON.stringify(article.text));
-        });
+        getData('categories')
+            .then(({categories}) => {
+                const categoryPromises = categories.map(category => getData(category))
+                return Promise.all(categoryPromises)
+            })
+            .then(articleData => {
+                const categoryLijst = articleData.find(category => category.id === this.category)
+                const artikel = categoryLijst.artikelen.find(artikel => artikel.id === this.id)
+                this.titel = artikel.title
+                this.tekst = artikel.text
+
+                const tekstCont = this.shadowRoot.querySelector("#tekst-cont");
+                tekstCont.innerHTML = this.tekst;
+            })
+
+
+
+
+    //     getData('articles')
+    //         .then(({articles}) => articles.find(article => article.id === this.id))
+    //         .then(article => {
+    //             this.titel = article.title;
+    //             this.tekst = JSON.parse(JSON.stringify(article.text));
+    //     }).then(() => {
+    //         const tekstCont = this.shadowRoot.querySelector("#tekst-cont");
+    //         tekstCont.innerHTML = this.tekst;
+    //     })
     }
 
 
@@ -60,7 +82,7 @@ class WikiArtikel extends LitElement {
                 </a>
                 <ul>
                     <li>
-                        <a href="/geschiedenis?id=${this.id}">
+                        <a href="/geschiedenis?id=${this.id}&category=${this.category}">
                             toon geschiedenis
                         </a>
                     </li>
@@ -71,8 +93,7 @@ class WikiArtikel extends LitElement {
                     </li>
                 </ul>
             </div>
-
-            <p id="tekst">${this.tekst}</p>
+            <div id="tekst-cont"></div>
         </div>
         `;
     }
