@@ -2,12 +2,7 @@ import {LitElement, html, css} from 'https://cdn.skypack.dev/lit-element@2.3.1'
 import filterSuggesties from "../utils/search-bar-filter.js";
 
 
-class searchBar extends LitElement {
-
-    // static get properties(){
-    //     // return { name: { type: String } };
-    // }
-
+class SearchBar extends LitElement {
     static get styles() {
         return css`
             label {
@@ -97,21 +92,15 @@ class searchBar extends LitElement {
 
 
     updated(changedProperties) {
-        if (
-            changedProperties.has('inputValue')
-        ) {
+        if (changedProperties.has('inputValue')) {
             if (this.inputValue === '') {
-                {
-                    this.suggesties = [];
-                }
-            }
-            else {
-                this.suggesties = filterSuggesties(
-                    this.inputValue,
-                    this.articleData);
+                this.suggesties = [];
+            } else {
+                this.suggesties = filterSuggesties(this.inputValue, this.articleData);
             }
         }
     }
+
     redirect(e) {
         if (e.key === 'Enter') {
             // const urlParam = new URLSearchParams(window.location.search);
@@ -125,7 +114,7 @@ class searchBar extends LitElement {
         // const urlParams = new URLSearchParams(window.location.search);
         return html`
         <div class="zoeken-container">
-            <label for="zoekbalk"></label>
+            <label for="zoekbalk">Zoekbalk</label>
             <input @keyup="${this.inputSuggestion}" @keypress="${this.redirect}"
              class="search-input" type="text" id="zoekbalk" name="zoeken" placeholder="Doorzoek de wiki..." value=""
             >
@@ -146,4 +135,4 @@ class searchBar extends LitElement {
     }
 }
 
-customElements.define('search-bar', searchBar);
+customElements.define('search-bar', SearchBar);
