@@ -6,18 +6,17 @@ class SearchBar extends LitElement {
     static get styles() {
         return css`
             label {
-                visibility: hidden;
+                display: none;
             }
            
             input {
                 max-width: 300px;
                 height: 2.3em;
-                border: none;
+                border: 1px solid #656565;
                 border-radius: 20px;
                 font-size: .8em;
                 font-family: sans-serif;
                 padding: .4em 1em;
-                margin-right: 1.9em;
             }
             
             input::placeholder {
