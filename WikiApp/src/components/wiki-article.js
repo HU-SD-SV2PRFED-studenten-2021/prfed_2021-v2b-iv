@@ -58,18 +58,6 @@ class WikiArtikel extends LitElement {
                 tekstCont.innerHTML = this.tekst;
             })
 
-
-
-
-    //     getData('articles')
-    //         .then(({articles}) => articles.find(article => article.id === this.id))
-    //         .then(article => {
-    //             this.titel = article.title;
-    //             this.tekst = JSON.parse(JSON.stringify(article.text));
-    //     }).then(() => {
-    //         const tekstCont = this.shadowRoot.querySelector("#tekst-cont");
-    //         tekstCont.innerHTML = this.tekst;
-    //     })
     }
 
 
