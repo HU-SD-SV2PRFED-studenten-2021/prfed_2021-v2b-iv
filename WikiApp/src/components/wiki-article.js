@@ -47,7 +47,10 @@ class WikiArtikel extends LitElement {
             .then(article => {
                 this.titel = article.title;
                 this.tekst = JSON.parse(JSON.stringify(article.text));
-        });
+        }).then(() => {
+            const tekstCont = this.shadowRoot.querySelector("#tekst-cont");
+            tekstCont.innerHTML = this.tekst;
+        })
     }
 
 
@@ -72,7 +75,7 @@ class WikiArtikel extends LitElement {
                 </ul>
             </div>
 
-            <p id="tekst">${this.tekst}</p>
+            <div id="tekst-cont"></div>
         </div>
         `;
     }
