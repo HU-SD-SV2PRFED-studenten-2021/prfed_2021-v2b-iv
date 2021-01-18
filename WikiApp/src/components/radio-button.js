@@ -1,9 +1,18 @@
 import {LitElement, html, css} from 'https://cdn.skypack.dev/lit-element@2.3.1'
 
 const styles = css`
+
+
+    :host {
+        display: flex;
+        flex-direction: column;
+    }
+
+
     .radio-button-container {
         display: flex;
         flex-direction: row;
+        flex-flow: wrap;
         padding: .5em 1.5em 1.7em 1.5em;    
     }
 
@@ -12,11 +21,6 @@ const styles = css`
     }
     legend {
         display: none;
-    }
-
-    form {
-        display: flex;
-        justify-content: space-evenly;
     }
 
     .filter-rb-cont {
@@ -40,6 +44,26 @@ const styles = css`
     .filter-rb-cont:hover {
         background-color: #e4e4e4;
     }
+
+
+    @media only screen and (max-width: 768px) {
+        .radio-button-container{
+            flex-direction: column;
+            justify-self: center;
+            width: min-content;
+            align-self: center;
+        }
+
+        label {
+            margin-left: 2em;
+        }
+        .filter-rb-cont {
+            width: 160px;
+            justify-content: flex-end;
+        }
+    
+    }            
+
     
 
 `
