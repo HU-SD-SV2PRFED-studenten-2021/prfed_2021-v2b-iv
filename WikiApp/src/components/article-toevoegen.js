@@ -70,6 +70,10 @@ class articleToevoegen extends LitElement{
             height: 100%;
             min-height: 10em;
         }
+
+        form {
+            margin-bottom: -200px;
+        }
     `    
     }
 
