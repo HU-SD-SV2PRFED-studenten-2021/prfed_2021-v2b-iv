@@ -30,16 +30,6 @@ class ArtikelHistory extends LitElement {
                     versie.collapsed = false;
                 })
             })
-
-
-    //     getData('articles')
-    //     .then(({articles}) => articles.find(article => article.id === this.id))
-    //     .then(article =>
-    //         this.versies = article.geschiedenis)
-    //     .then(() =>{
-    //         this.versies.forEach(versie => {
-    //             versie.collapsed = true;
-    //     })});
     }
 
 
