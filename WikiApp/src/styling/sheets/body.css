@@ -28,4 +28,13 @@ body {
             "main"
             "footer";
     }
+
+    wiki-footer {
+        flex-direction: column;
+    }
+    
+    wiki-footer>ul {
+        padding-left: 0;
+    }
 }
+

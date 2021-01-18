@@ -10,7 +10,7 @@ class Footer extends LitElement {
         :host {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: center;
             grid-area: footer;
             background-color: rgb(28 63 93);
             color: #bce0ff;
@@ -60,18 +60,6 @@ class Footer extends LitElement {
             border-bottom: 4px solid rgb(101, 224, 255);
             border-left: 2px solid rgb(101, 224, 255);
         }
-        
-        @media only screen and (max-width: 768px) {
-            /* For mobile phones: */
-            footer {
-                flex-direction: column;
-            }
-            
-            ul {
-                padding-left: 0;
-            }
-        }
-        
         `
     }
 
