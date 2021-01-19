@@ -8,7 +8,8 @@ class WikiArtikel extends LitElement {
             id: { type: String, attribute: 'id', reflect: true },
             titel: { type: String, reflect: true },
             tekst: { type: String},
-            category: {type: String}
+            category: {type: String},
+            rol: {type: String}
         }
     }
 
@@ -37,6 +38,10 @@ class WikiArtikel extends LitElement {
             #titel-link:hover {
                 text-decoration: underline;
             }
+            
+            .gast{
+            display: none;
+            }
         `;
     }
 
@@ -58,6 +63,11 @@ class WikiArtikel extends LitElement {
                 tekstCont.innerHTML = this.tekst;
             })
 
+        this.rol = localStorage.getItem('role')
+        if(this.rol === null){
+            this.rol = "gast"
+        }
+
     }
 
 
@@ -75,7 +85,7 @@ class WikiArtikel extends LitElement {
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a class="${this.rol}" href="#">
                             bewerk artikel
                         </a>
                     </li>
