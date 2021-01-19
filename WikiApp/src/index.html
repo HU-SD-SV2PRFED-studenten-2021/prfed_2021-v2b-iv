@@ -25,12 +25,19 @@
             <button class="nav-btn primary-btn">Inloggen</button>
         </form>
         <form>
-            <button class="nav-btn secondary-btn">Voeg artikel toe</button>
+            <button id="voegArtikel" class="nav-btn secondary-btn">Voeg artikel toe</button>
         </form>
     </nav>
     <main>
         <view-index></view-index>
         <script type="module">
+            const voegArtikel = document.getElementById('voegArtikel')
+            const rol = localStorage.getItem('role')
+
+            if (rol === null){
+                voegArtikel.style.display = 'none'
+            }
+
             import getData from "./utils/get-data.js"
             const indexView = document.querySelector('view-index')
             const searchBar = document.querySelector('search-bar')

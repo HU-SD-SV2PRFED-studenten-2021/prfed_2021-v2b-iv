@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.skypack.dev/lit-element@2.3.1';
 
 const styles = css`
+
 .confirm {
     position: fixed;
     top: 0;
@@ -157,6 +158,10 @@ const styles = css`
     cursor: pointer;
 }
 
+.student {
+    display: none;
+}
+
 
 
 `
@@ -170,6 +175,7 @@ class deleteArticle extends LitElement{
         return{
             state: { type: String },
             titel: {type: String},
+            rol: {type: String}
         }
     }
 
@@ -180,6 +186,9 @@ class deleteArticle extends LitElement{
 
     connectedCallback() {
         super.connectedCallback();
+
+        const rol = localStorage.getItem('role')
+        this.rol = rol
     }
 
     close(){
@@ -192,14 +201,13 @@ class deleteArticle extends LitElement{
     }
 
     delete(){
-
     }
 
 
 
     render(){
         return html`
-        <button class="nav-btn primary-btn" @click="${this.open}">Verwijder artikel</button>
+        <button class="nav-btn primary-btn ${this.rol}" @click="${this.open}">Verwijder artikel</button>
         <div class="${this.state}">
             <div class="confirm__window">
                 <div class="confirm__titlebar">

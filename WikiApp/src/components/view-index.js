@@ -26,7 +26,6 @@ class viewIndex extends LitElement {
             filteren:{type: String, reflect:true},
             artikelList:{type:Array},
             filter_:{type : String, reflect: true}
-
         }
     }
 
