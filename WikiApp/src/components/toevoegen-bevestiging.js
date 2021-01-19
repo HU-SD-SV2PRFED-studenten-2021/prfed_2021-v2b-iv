@@ -1,7 +1,15 @@
 import {LitElement, html, css} from 'https://cdn.skypack.dev/lit-element@2.3.1'
+import { connect } from 'https://cdn.skypack.dev/pwa-helpers@0.9.1/connect-mixin.js';
+import store from '../redux/index.js'
+import { open as show, close as hidden} from '../redux/popup.js'
 
 
-class toevoegenBevestiging extends LitElement {
+
+
+
+
+
+class toevoegenBevestiging extends connect(store)(LitElement) {
 
 
 
@@ -191,22 +199,31 @@ class toevoegenBevestiging extends LitElement {
 
     static get properties() {
         return {
-            state: { type:String, reflect:true },
+            zicht : {type: String}
         }
     }
 
 
     open(){
-        this.state = 'confirm'
+        store.dispatch(show())
+
     }
 
     close() {
-
-        this.state = this.state + ' confirm--close'
-        this.state = ''
-
-
+        store.dispatch(hidden())
     }
+
+    stateChanged(state) {
+
+        if (state.popup === true) {
+            this.zicht = 'confirm'
+        } else {
+            this.zicht = this.state + ' confirm--close'
+            this.zicht = ''
+
+        }
+    }
+
 
 
 
@@ -214,7 +231,7 @@ class toevoegenBevestiging extends LitElement {
 
         return html`
             <button class="submit" @click="${this.open}">bevestigen</button>
-            <div class="${this.state}">
+            <div class="${this.zicht}">
                 <div class="confirm__window">
                     <div class="confirm__titlebar">
                         <span class="confirm__title">Bevestiging</span>
