@@ -80,8 +80,9 @@ class WikiArtikel extends LitElement {
                         </a>
                     </li>
                 </ul>
-            </div>
+            </div>          
             <div id="tekst-cont"></div>
+            <delete-article titel="${this.titel}"></delete-article>
         </div>
         `;
     }
