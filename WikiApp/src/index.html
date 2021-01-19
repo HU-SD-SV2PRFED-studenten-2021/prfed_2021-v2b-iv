@@ -11,15 +11,31 @@
     <wiki-header></wiki-header>
     <nav>
         <form action="/login">
-            <button class="nav-btn primary-btn">Inloggen</button>
+            <button id="inloggen" class="nav-btn primary-btn">Inloggen</button>
         </form>
         <form action="/toevoegen">
-            <button class="nav-btn secondary-btn">Voeg artikel toe</button>
+            <button id="voegArtikel" class="nav-btn secondary-btn">Voeg artikel toe</button>
+        </form>
+        <form action="/">
+            <button id="uitloggen" onclick="myFunction()" class="nav-btn third-btn">Uitloggen</button>
         </form>
     </nav>
     <main>
         <view-index></view-index>
         <script type="module">
+            const voegArtikel = document.getElementById('voegArtikel')
+            const uitloggen = document.getElementById('uitloggen')
+            const inloggen = document.getElementById('inloggen')
+            const rol = localStorage.getItem('role')
+
+            if (rol === null){
+                voegArtikel.style.display = 'none'
+                uitloggen.style.display = 'none'
+            }
+            if (rol != null){
+                inloggen.style.display = 'none'
+            }
+
             import getData from "./utils/get-data.js"
             const indexView = document.querySelector('view-index')
             const wikiHeader = document.querySelector('wiki-header')
@@ -37,6 +53,11 @@
             function openForm() {
                 console.log('open form')
             }
+        </script>
+        <script>
+            function myFunction(){
+                localStorage.clear();
+            };
         </script>
     </main>
     <wiki-footer></wiki-footer>
