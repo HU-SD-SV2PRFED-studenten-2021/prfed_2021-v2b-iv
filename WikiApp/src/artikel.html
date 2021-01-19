@@ -7,36 +7,48 @@
     <title>Hbo-i Wiki website</title>
 </head>
 <body>
-    <wiki-header></wiki-header>
-    <nav>
-        <form action="/login">
-            <button class="nav-btn primary-btn">Inloggen</button>
-        </form>
-        <form action="/toevoegen">
-            <button id="voegArtikel" class="nav-btn secondary-btn">Voeg artikel toe</button>
-        </form>    
-    </nav>
-    <main>
-        <wiki-article></wiki-article>
-    </main>
-    <wiki-footer></wiki-footer>
-    <script type="module" src="main.js"></script>
-    <script>
-        const voegArtikel = document.getElementById('voegArtikel')
-        const rol = localStorage.getItem('role')
-
-        if (rol === null){
-            voegArtikel.style.display = 'none'
-        }
+<wiki-header></wiki-header>
+<nav>
+    <form action="/login">
+        <button class="nav-btn primary-btn">Inloggen</button>
+    </form>
+    <form action="/toevoegen">
+        <button id="voegArtikel" class="nav-btn secondary-btn">Voeg artikel toe</button>
+    </form>
+</nav>
+<main>
+    <wiki-article></wiki-article>
+    <script type="module">
+        import getData from "./utils/get-data.js"
 
 
-        const viewProduct = document.querySelector('wiki-article')
-        const urlParams = new URLSearchParams(window.location.search);
-        const id = urlParams.get('id');
-        const category = urlParams.get('category');
 
-        viewProduct.setAttribute('category', category)
-        viewProduct.setAttribute('id', id)
-    </script>    
+        const wikiArticle = document.querySelector('wiki-article')
+
+        getData('categories').then(({ categories }) => {wikiArticle.artikelData = categories})
+    </script>
+</main>
+<wiki-footer></wiki-footer>
+<script type="module" src="main.js"></script>
+
+<script>
+
+    const voegArtikel = document.getElementById('voegArtikel')
+    const rol = localStorage.getItem('role')
+
+    if (rol === null){
+        voegArtikel.style.display = 'none'
+    }
+
+    const viewProduct = document.querySelector('wiki-article')
+
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    const category = urlParams.get('category');
+
+    viewProduct.setAttribute('category', category)
+    viewProduct.setAttribute('id', id)
+</script>
 </body>
 </html>
