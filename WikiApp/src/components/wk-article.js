@@ -29,13 +29,14 @@ class wkArticle extends LitElement {
         return{
             titel: {type: String},
             link: {type: String},
-            rol: {type: String}
+            rol: {type: String},
+            category: {attribute: 'category'}
         }
     }
 
     connectedCallback() {
         super.connectedCallback();
-        this.link = `/artikel?id=${this.getAttribute('id')}`;
+        this.link = `/artikel?id=${this.getAttribute('id')}&category=${this.category}`;
     }
 
     render() {

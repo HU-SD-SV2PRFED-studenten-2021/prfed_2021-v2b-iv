@@ -20,20 +20,15 @@
 }
 
 .nav-btn:active {
-    border: 3px solid black;
+    outline: 2px solid black;
 }
 
 .nav-btn {
-    box-sizing: border-box;
+    color: black;
     padding: 10px 0 10px 0;
     margin: .5em;
     font-size: .8em;
-    min-width: 600px;
+    min-width: 350px;
     border-radius: 3px;
     cursor: pointer;
-}
-
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    
 }

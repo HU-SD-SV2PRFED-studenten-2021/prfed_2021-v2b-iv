@@ -2,27 +2,21 @@ import {LitElement, html, css} from 'https://cdn.skypack.dev/lit-element@2.3.1'
 import filterSuggesties from "../utils/search-bar-filter.js";
 
 
-class searchBar extends LitElement {
-
-    // static get properties(){
-    //     // return { name: { type: String } };
-    // }
-
+class SearchBar extends LitElement {
     static get styles() {
         return css`
             label {
-                visibility: hidden;
+                display: none;
             }
            
             input {
                 max-width: 300px;
                 height: 2.3em;
-                border: none;
+                border: 1px solid #656565;
                 border-radius: 20px;
                 font-size: .8em;
                 font-family: sans-serif;
                 padding: .4em 1em;
-                margin-right: 1.9em;
             }
             
             input::placeholder {
@@ -97,42 +91,36 @@ class searchBar extends LitElement {
 
 
     updated(changedProperties) {
-        if (
-            changedProperties.has('inputValue')
-        ) {
+        if (changedProperties.has('inputValue')) {
             if (this.inputValue === '') {
-                {
-                    this.suggesties = [];
-                }
-            }
-            else {
-                this.suggesties = filterSuggesties(
-                    this.inputValue,
-                    this.articleData);
+                this.suggesties = [];
+            } else {
+                this.suggesties = filterSuggesties(this.inputValue, this.articleData);
             }
         }
     }
+
     redirect(e) {
         if (e.key === 'Enter') {
-            const urlParam = new URLSearchParams(window.location.search);
-            urlParam.delete('value');
-            let url = urlParam + '/zoekPagina?value=' + this.inputValue;
+            // const urlParam = new URLSearchParams(window.location.search);
+            // // urlParam.delete('value');
+            let url = '/zoekPagina?value=' + this.inputValue;
             window.location = url;
         }
     }
 
     render() {
-        const urlParams = new URLSearchParams(window.location.search);
+        // const urlParams = new URLSearchParams(window.location.search);
         return html`
         <div class="zoeken-container">
-            <label for="zoekbalk"></label>
+            <label for="zoekbalk">Zoekbalk</label>
             <input @keyup="${this.inputSuggestion}" @keypress="${this.redirect}"
              class="search-input" type="text" id="zoekbalk" name="zoeken" placeholder="Doorzoek de wiki..." value=""
             >
             <div class="suggestie-container">
                 ${this.suggesties.map(artikel => html`
                 ${console.log(artikel)}
-                <a href="${urlParams + '/artikel?id=' + artikel.id}">
+                <a href="${'/artikel?id=' + artikel.id}">
                     <li>
                         <h3>${artikel.title}</h3>
                         <p>${artikel.text}</h4>
@@ -146,4 +134,4 @@ class searchBar extends LitElement {
     }
 }
 
-customElements.define('search-bar', searchBar);
+customElements.define('search-bar', SearchBar);

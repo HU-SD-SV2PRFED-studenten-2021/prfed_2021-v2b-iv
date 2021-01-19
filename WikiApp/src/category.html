@@ -8,17 +8,14 @@
 </head>
 
 <body>
-<header>
-    <h1 id="titel-heading">hbo-i Wiki website</h1>
-    <a href="#">
-        <img id="wiki-logo" src="./images/wiki-logo.png" alt="hbo-i Wiki logo">
-    </a>
-    <search-bar></search-bar>
-    <!--        <article-result></article-result>-->
-</header>
+<wiki-header></wiki-header>
 <nav>
-    <button class="nav-btn">Inloggen</button>
-    <button class="nav-btn">Voeg artikel toe</button>
+    <form action="/login">
+        <button class="nav-btn primary-btn">Inloggen</button>
+    </form>
+    <form action="/toevoegen">
+        <button class="nav-btn secondary-btn">Voeg artikel toe</button>
+    </form>
 </nav>
 <main>
     <category-articles></category-articles>
@@ -29,6 +26,8 @@
         const viewProduct = document.querySelector('category-articles')
         const urlParams = new URLSearchParams(window.location.search);
         const category = urlParams.get('category');
+        const wikiHeader = document.querySelector('wiki-header')
+
 
         viewProduct.setAttribute('category', category);
 
@@ -41,30 +40,12 @@
             })
             .then(articleData => {
                 categoryArticles.articleData = articleData
+                wikiHeader.articleData = articleData
+
             })
     </script>
 </main>
-<footer>
-    <p>We zijn Open Source! Kijk ons project eens op <a id="repo-link" class="footer-links" href="https://github.com/HU-SD-SV2PRFED-studenten-2021/prfed_2021-v2b-iv"><span id="github-ref-cont">Github <img id="github-logo" src="./images/github-logo.png" alt="Github logo"></span></a></p>
-
-    <ul>
-        <li>
-            <a class="footer-links" href="#">
-                Privacy Policy
-            </a>
-        </li>
-        <li>
-            <a class="footer-links" href="#">
-                Terms of Service
-            </a>
-        </li>
-        <li>
-            <a  class="footer-links" href="#">
-                About
-            </a>
-        </li>
-    </ul>
-</footer>
+<wiki-footer></wiki-footer>
 <script type="module" src="main.js"></script>
 </body>
 </html>

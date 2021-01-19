@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.skypack.dev/lit-element@2.3.1';
 import getData from "../utils/get-data.js";
+import artikelData from "../utils/article-data.js";
 
 class WikiArtikel extends LitElement {
     static get properties() {
@@ -13,10 +14,28 @@ class WikiArtikel extends LitElement {
 
     static get styles() {
         return css`
-            .artikel-cont {
-                border: 0.1em solid rgb(46, 42, 42);
-                margin-top: 3em;
-                padding: 1em;
+            #artikel-cont {
+                padding: 1.5em;
+            }
+
+            #artikel-header-cont {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            #titel-link {
+                text-decoration: none;
+                color: #000000;
+            } 
+
+            #titel-link:hover {
+                text-decoration: underline;
             }
         `;
     }
@@ -24,27 +43,47 @@ class WikiArtikel extends LitElement {
     connectedCallback() {
         super.connectedCallback();
 
-        getData('articles')
-            .then(({articles}) => articles.find(article => article.id === this.id))
-            .then(article => {
-                this.titel = article.title;
-                this.tekst = JSON.parse(JSON.stringify(article.text));
-                    });
+        getData('categories')
+            .then(({categories}) => {
+                const categoryPromises = categories.map(category => getData(category))
+                return Promise.all(categoryPromises)
+            })
+            .then(articleData => {
+                const categoryLijst = articleData.find(category => category.id === this.category)
+                const artikel = categoryLijst.artikelen.find(artikel => artikel.id === this.id)
+                this.titel = artikel.title
+                this.tekst = artikel.text
+
+                const tekstCont = this.shadowRoot.querySelector("#tekst-cont");
+                tekstCont.innerHTML = this.tekst;
+            })
+
     }
 
 
     render() {
         return html`
-            <div class="artikel-cont">
-            
-            <h1>
-                <a href="artikelen/${this.id}">
-                    <slot name="titel">${this.titel}</slot>
+        <div id="artikel-cont">
+            <div id="artikel-header-cont">
+                <a id="titel-link" href="/artikel?id=${this.id}">
+                    <h1 id="titel">${this.titel}</h1>
                 </a>
-            </h1>
-                <slot name="tekst">${this.tekst}</slot>
-            </div>
+                <ul>
+                    <li>
+                        <a href="/geschiedenis?id=${this.id}&category=${this.category}">
+                            toon geschiedenis
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            bewerk artikel
+                        </a>
+                    </li>
+                </ul>
+            </div>          
+            <div id="tekst-cont"></div>
             <delete-article titel="${this.titel}"></delete-article>
+        </div>
         `;
     }
 }

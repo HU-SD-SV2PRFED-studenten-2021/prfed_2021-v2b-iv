@@ -1,21 +1,69 @@
 import {LitElement, html, css} from 'https://cdn.skypack.dev/lit-element@2.3.1'
 
 const styles = css`
-    .radio-button-container{
-            margin-left: 5rem;
+
+
+    :host {
+        display: flex;
+        flex-direction: column;
     }
-    label{
-          margin-left: 50px;
-          font-size: 1em;
-          font-family: sans-serif;
-          font-weight: bold;
-          border-radius: 6px;
-          
+
+
+    .radio-button-container {
+        display: flex;
+        flex-direction: row;
+        flex-flow: wrap;
+        padding: .5em 1.5em 1.7em 1.5em;    
+    }
+
+    label, input {
+        cursor: pointer;
+    }
+    legend {
+        display: none;
+    }
+
+    .filter-rb-cont {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 35px;
+        width: min-content;
+    }
     
+
+    label {
+        font-size: 1em;
+        font-family: sans-serif;
+        font-weight: bold;
+        margin-left: .4em;
+        user-select: none;
     }
-        label:hover {
-          background-color: #f5f5f5;
+
+    .filter-rb-cont:hover {
+        background-color: #e4e4e4;
     }
+
+
+    @media only screen and (max-width: 768px) {
+        .radio-button-container{
+            flex-direction: column;
+            justify-self: center;
+            width: min-content;
+            align-self: center;
+        }
+
+        label {
+            margin-left: 2em;
+        }
+        .filter-rb-cont {
+            width: 160px;
+            justify-content: flex-end;
+        }
+    
+    }            
+
     
 
 `
@@ -68,18 +116,20 @@ class radioButton extends LitElement {
 
 
     render() {
-        return html`
-        <div class="radio-button-container" value="${this.filter}"
+        return html`        
+        <legend for="rb-filter">Categorien filter</legend>
+        <form id="rb-filter" class="radio-button-container" value="${this.filter}"
                 @change="${this.filterChanged}">
             
             ${Object.values(VisibilityFilter).map(filter =>
                  html`
-                    <label> ${filter}
-                        <input type="radio" name="filter" value="${filter}"  checked  @change="${this.emitChange()}" />
-                    </label>
+                    <div class="filter-rb-cont">
+                        <label for=${filter}>${filter}</label>  
+                        <input type="radio" name="filter" id=${filter} value="${filter}"  checked  @change="${this.emitChange()}" />
+                    </div>
                    `
         )}
-        </div>
+        </form>
         `;
     }
 

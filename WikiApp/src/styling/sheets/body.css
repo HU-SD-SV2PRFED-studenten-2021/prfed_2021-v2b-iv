@@ -5,7 +5,7 @@ html {
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 4fr 1fr;
     grid-template-areas: 
         "header header"
         "main nav"
@@ -28,4 +28,13 @@ body {
             "main"
             "footer";
     }
+
+    wiki-footer {
+        flex-direction: column;
+    }
+    
+    wiki-footer>ul {
+        padding-left: 0;
+    }
 }
+
