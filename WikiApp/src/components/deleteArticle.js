@@ -158,7 +158,7 @@ const styles = css`
     cursor: pointer;
 }
 
-.student {
+.geenDocent {
     display: none;
 }
 
@@ -189,6 +189,9 @@ class deleteArticle extends LitElement{
 
         const rol = localStorage.getItem('role')
         this.rol = rol
+        if(this.rol === null || this.rol=== "student"){
+            this.rol = "geenDocent"
+        }
     }
 
     close(){
