@@ -49,7 +49,7 @@ class Footer extends LitElement {
             height: min-content;
             align-items: center;
             margin-right: 3px;
-            border-radius: 20px;
+            border-radius: 50px;
         }
         
         #github-ref-cont:hover {
