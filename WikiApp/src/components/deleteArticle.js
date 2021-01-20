@@ -27,6 +27,7 @@ const styles = css`
 }
 
 .confirm__window {
+    position: fixed;
     width: 100%;
     max-width: 600px;
     background: white;
