@@ -78,7 +78,7 @@ class WikiArtikel extends LitElement {
         return html`
         <div id="artikel-cont">
             <div id="artikel-header-cont">
-                <a id="titel-link" href="/artikel?id=${this.id}">
+                <a id="titel-link" href="/artikel?id=${this.id}&category=${this.category}">
                     <h1 id="titel">${this.titel}</h1>
                 </a>
                 <ul>
