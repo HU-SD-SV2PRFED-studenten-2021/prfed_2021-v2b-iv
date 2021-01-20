@@ -16,7 +16,7 @@
             <button id="uitloggen" onclick="myFunction()" class="nav-btn third-btn">Uitloggen</button>
         </form>
         <form action="/toevoegen">
-            <button class="nav-btn secondary-btn">Voeg artikel toe</button>
+            <button id="voegArtikel" class="nav-btn secondary-btn">Voeg artikel toe</button>
         </form>
     </nav>
     <main>
@@ -40,6 +40,7 @@
         const rol = localStorage.getItem('role')
 
         if (rol === null){
+            voegArtikel.style.display = 'none'
             uitloggen.style.display = 'none'
         }
         if (rol != null){
