@@ -32,6 +32,7 @@ class artikelBewerken extends LitElement{
                 }
         
         .confirm__window {
+                    position: fixed;
                     width: 100%;
                     max-width: 600px;
                     background: white;
@@ -112,6 +113,7 @@ class artikelBewerken extends LitElement{
                     margin-left: 0.6em;
                     cursor: pointer;
                     outline: none;
+                    width: 80px;
                 }
         
         .confirm__button--fill {
@@ -163,35 +165,20 @@ class artikelBewerken extends LitElement{
                     cursor: pointer;
                 }
         .submit{
-                    width: 40%;
-                    background: #2A88AD;
-                    padding: 8px 20px 8px 20px;
-                    border-radius: 5px;
-                    float: right;
-                    height:60px;
-                    -webkit-border-radius: 5px;
-                    -moz-border-radius: 5px;
-                    color: #fff;
-                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
-                    font: normal 30px 'Bitter', serif;
-                    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-                    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-                    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-                    border: 1px solid #257C9E;
-                    font-size: 15px;
-                  
-            
-        }
-        .submit:hover{
-            opacity: .9;
+            text-decoration: underline;
+            color: darkblue;
         }
 
-
+        .submit:visited {
+            color: purple;
+        }
 
         .form-row-cont {
             display: flex;
             flex-direction: column;
             margin-bottom: 1.5em;
+            margin-left: 1em;
+            margin-right: 1em;
         }
     
         fieldset {
@@ -233,6 +220,7 @@ class artikelBewerken extends LitElement{
             resize: vertical;
             height: 100%;
             min-height: 10em;
+            height: 280px;
         }
 
         form {
@@ -268,7 +256,7 @@ class artikelBewerken extends LitElement{
 
     render(){
         return html`
-                <button class="submit" @click="${this.open}">Bewerken</button>
+                <p class="submit" @click="${this.open}">bewerken</button>
                 <div class="${this.state}">
                     <div class="confirm__window">
                         <div class="confirm__titlebar">
