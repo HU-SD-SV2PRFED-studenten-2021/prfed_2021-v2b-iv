@@ -225,12 +225,26 @@ class artikelBewerken extends LitElement{
 
         form {
             margin-bottom: -200px;
-        }`
+        }
+        
+        #gast{
+            display: none;
+        }
+        `
     }
 
     static get properties() {
         return {
-            state: { type:String, reflect:true }
+            state: { type:String, reflect:true },
+            rol: {type: String}
+        }
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+        this.rol = localStorage.getItem('role')
+        if (this.rol === null){
+            this.rol = "gast"
         }
     }
 
@@ -256,7 +270,7 @@ class artikelBewerken extends LitElement{
 
     render(){
         return html`
-                <p class="submit" @click="${this.open}">bewerken</button>
+                <p id="${this.rol}" class="submit" @click="${this.open}">bewerken</button>
                 <div class="${this.state}">
                     <div class="confirm__window">
                         <div class="confirm__titlebar">
