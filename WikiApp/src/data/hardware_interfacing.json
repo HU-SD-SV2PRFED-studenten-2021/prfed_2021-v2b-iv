@@ -2,8 +2,8 @@
   "id":"hardware_interfacing",
   "name": "Hardware Interfacing",
   "artikelen": [
-    { "id": "4", "title": "Use case diagram", "rol": "realiseren", "text": "Wat tekst hier en daar hoort erbij"},
-    { "id": "5", "title": "Use case template", "rol": "realiseren","text": "Ja een use case template natuurlijk nice."},
-    { "id": "6", "title": "Activity diagram", "rol": "realiseren", "text": "Activity diagram is hier wel handig"}
+    { "id": "4", "title": "Use case diagram", "rol": "realiseren", "text": "Een usecasediagram in de Unified Modeling Language is een diagram dat wordt gedefinieerd en verder ontwikkeld door usecase-analyse.[1] Usecasediagrammen worden voornamelijk gebruikt in software engineering om de requirements van een systeem in kaart te brengen.\n\nHet doel van het usecasediagram is om een grafisch overzicht te geven van de functionaliteiten van een systeem in termen van actoren, hun bedoeling uitgedrukt als usecases en de onderlinge relaties tussen deze usecases."},
+    { "id": "5", "title": "Use case template", "rol": "realiseren","text": "Een Use Case (Specification) is de uitgewerkte beschrijving van de interactie van een Actor (menselijk of anders) met het te bouwen systeem. Deze beschrijving is zodanig dat ze een resultaat oplevert dat waarde heeft voor de opdrachtgever / gebruiker. De interactiestappen kunnen samenhangend en ononderbroken worden gedaan. Er is één basisscenario, dat wil zeggen, de meest eenvoudige of logische weg naar het resultaat, en optioneel één of meer alternatieve scenario’s waarin alternatieve paden naar het resultaat beschreven worden. Eveneens optioneel één of meer foutscenario’s, waarin wordt vastgelegd wat er gebeurt bij functionele fouten: schending van business rules enzovoorts."},
+    { "id": "6", "title": "Activity diagram", "rol": "realiseren", "text": "Een activiteitendiagram is een van de methoden en technieken in de informatica om stapsgewijze bedrijfsprocessen in een diagram weer te geven, als onderdeel van een systeemanalyse. In het algemeen kunnen de activiteiten van een proces worden opgedeeld in:[2]\n\nProducten: de goederen en diensten van een bedrijf\nBewerkingen: activiteiten verricht aan de goederen en diensten\nBeslissingen: beoordelingen over het verdere verloop van de activiteiten"}
   ]
 }
