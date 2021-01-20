@@ -1,0 +1,20 @@
+#io-img {
+    height: 300px;
+    width: 300px;
+}
+
+#io-cont {
+    display: flex;
+    flex-direction: row;
+    padding: 2em;
+    /* margin-top: -30px; */
+}
+
+#io-main {
+    background-color: #f7f7f7;
+}
+
+#in-opbouw {
+    font-size: 2.6em;
+    margin-left: 1em;
+}

@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styling/style.css">
-    <title>Hbo-i Wiki website</title>
+    <title>Hbo-i Wiki website | Artikel</title>
 </head>
-
 <body>
     <wiki-header></wiki-header>
     <nav>
@@ -22,6 +21,15 @@
     </nav>
     <main>
         <wiki-article></wiki-article>
+        <script type="module">
+        import getData from "./utils/get-data.js"
+
+
+
+        const wikiArticle = document.querySelector('wiki-article')
+
+        getData('categories').then(({ categories }) => {wikiArticle.artikelData = categories})
+    </script>
     </main>
     <wiki-footer></wiki-footer>
     <script type="module" src="main.js"></script>

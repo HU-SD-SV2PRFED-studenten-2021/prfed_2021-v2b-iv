@@ -1,21 +1,12 @@
-import {LitElement, html, css} from 'https://cdn.skypack.dev/lit-element@2.3.1'
-import { connect } from 'https://cdn.skypack.dev/pwa-helpers@0.9.1/connect-mixin.js';
-import store from '../redux/index.js'
-import { open as show, close as hidden} from '../redux/popup.js'
+import { LitElement, html, css } from 'https://cdn.skypack.dev/lit-element@2.3.1';
+import getData from "../utils/get-data.js";
 
 
 
-
-
-
-
-class toevoegenBevestiging extends connect(store)(LitElement) {
-
-
+class artikelBewerken extends LitElement{
 
     static get styles() {
         return css`
-            
             .confirm {
                     position: fixed;
                     top: 0;
@@ -122,6 +113,7 @@ class toevoegenBevestiging extends connect(store)(LitElement) {
                     margin-left: 0.6em;
                     cursor: pointer;
                     outline: none;
+                    width: 80px;
                 }
         
         .confirm__button--fill {
@@ -173,82 +165,135 @@ class toevoegenBevestiging extends connect(store)(LitElement) {
                     cursor: pointer;
                 }
         .submit{
-                    width: 40%;
-                    background: #2A88AD;
-                    padding: 8px 20px 8px 20px;
-                    border-radius: 5px;
-                    float: right;
-                    height:60px;
-                    -webkit-border-radius: 5px;
-                    -moz-border-radius: 5px;
-                    color: #fff;
-                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
-                    font: normal 30px 'Bitter', serif;
-                    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-                    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-                    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-                    border: 1px solid #257C9E;
-                    font-size: 15px;
-                  
-            
+            text-decoration: underline;
+            color: darkblue;
         }
-        .submit:hover{
-            opacity: .9;
+
+        .submit:visited {
+            color: purple;
         }
-    `
+
+        .form-row-cont {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.5em;
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+    
+        fieldset {
+            border: none;
+        }
+
+        legend {
+            display: none;
+        }
+
+        .form-input {
+            font-size: .9em;
+            box-sizing: border-box;
+            border: 1px solid #C2C2C2;
+            border-radius: 3px;
+            padding: .7em;
+            margin-left: .5em;
+            outline: none;
+        }
+
+
+
+        .form-input:focus {
+            border: 1px solid #000000;
+        }
+
+        #select-field {
+            margin-top: .5em;
+            max-width: 280px;
+        }
+
+        #tekstarea-label {
+            display: none;
+        }
+
+        
+        textarea {
+            font-family: sans-serif;
+            resize: vertical;
+            height: 100%;
+            min-height: 10em;
+            height: 280px;
+        }
+
+        form {
+            margin-bottom: -200px;
+        }`
     }
 
     static get properties() {
         return {
-            zicht : {type: String}
+            state: { type:String, reflect:true }
         }
+    }
+
+    bewerkt(){
+        this.state = this.state + ' confirm--close'
+        this.state = ''
+        alert('artikel wordt bewerkt en toegevoegd naar geschiedenis')
     }
 
 
     open(){
-        store.dispatch(show())
-
+        this.state = 'confirm'
     }
 
     close() {
-        store.dispatch(hidden())
-    }
 
-    stateChanged(state) {
+        this.state = this.state + ' confirm--close'
+        this.state = ''
 
-        if (state.popup === true) {
-            this.zicht = 'confirm'
-        } else {
-            this.zicht = this.state + ' confirm--close'
-            this.zicht = ''
 
-        }
     }
 
 
-
-
-    render() {
-
+    render(){
         return html`
-            <button class="submit" @click="${this.open}">bevestigen</button>
-            <div class="${this.zicht}">
-                <div class="confirm__window">
-                    <div class="confirm__titlebar">
-                        <span class="confirm__title">Bevestiging</span>
+                <p class="submit" @click="${this.open}">bewerken</button>
+                <div class="${this.state}">
+                    <div class="confirm__window">
+                        <div class="confirm__titlebar">
+                            <span class="confirm__title">Bewerken</span>
+                        </div>
+                            <legend>Nieuwe artikel toevoegen</legend>
+                            <div class="form-row-cont">
+                                <label for="titel-input">Titel</label>
+                                <input @keyup="${this.titelInput}" type="text" id="titel-input" class="form-input" name="titel-input" value="${this.titel}"/>
+                            </div>
+                            <div class="form-row-cont">
+                                <label for="select-field">Artikel Categorie</label>
+                                <select id="select-field" class="form-input" @change="${this.categoryInput}">
+                                    <option selected hidden >${this.category}</option>
+                                ${this.artikelData.map(artikel => html`
+                                <option value="${artikel}">
+                                                ${artikel}
+                                     </option>
+                                    `)}
+                                </select>
+                            </div>
+                            <div class="form-row-cont">
+                                <label for="tekst-input" id="tekstarea-label">Artikeltekst</label>
+                                <textarea id="tekst-input" class="form-input" @keyup="${this.textInput}">${this.text}</textarea>
+                            </div>    
+                            <div class="confirm__buttons">
+                                <button  class="confirm__button confirm__button--ok confirm__button--fill" @click="${this.bewerkt}">Ja</button>
+                                <button class="confirm__button confirm__button--cancel" @click="${this.close}" >Nee</button>            
+                            </div>
+                        </div>
                     </div>
-                    <div class="confirm__content">Weet u zeker dat u het artikel <strong>${this.titel}</strong> naar categorie  <strong>${this.category}</strong> wilt toevoegen?<br>
-                        <h2>${this.titel}</h2>
-                        <p>${this.text}</p>
-                    </div>
-                    <div class="confirm__buttons">
-                        <a href="https://fep-wiki-project-v2b-iv.herokuapp.com/" class="confirm__button confirm__button--ok confirm__button--fill" @click="${this.delete}">Ja</a>
-                        <button class="confirm__button confirm__button--cancel" @click="${this.close}" >Nee</button>
-                    </div>
-                </div>
-            </div>
         `
     }
+
+
+
 }
 
-customElements.define('toevoegen-bevestiging', toevoegenBevestiging);
+
+window.customElements.define('article-bewerken', artikelBewerken);

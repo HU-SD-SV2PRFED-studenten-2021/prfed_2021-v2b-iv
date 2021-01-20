@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styling/style.css">
+    <title>Hbo-i Wiki website | In Opbouw</title>
+</head>
+<body>
+    <wiki-header></wiki-header>
+    <nav>
+        <form action="/login">
+            <button class="nav-btn primary-btn">Inloggen</button>
+        </form>
+        <form action="/toevoegen">
+            <button id="voegArtikel" class="nav-btn secondary-btn">Voeg artikel toe</button>
+        </form>    
+    </nav>
+    <main id="io-main">
+        <div id="io-cont">
+            <div>
+                <img id="io-img" src="./images/building-blocks.png" alt="bouwblokken">
+            </div>
+
+            <div>
+                <p id="in-opbouw"><strong>In opbouw...</strong></p>            
+            </div>
+        </div>
+
+
+    </main>
+    <wiki-footer></wiki-footer>
+    <script type="module" src="main.js"></script>
+
+</body>
+</html>

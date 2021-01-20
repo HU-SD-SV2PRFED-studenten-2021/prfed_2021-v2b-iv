@@ -14,6 +14,7 @@ const styles = css`
         flex-direction: row;
         flex-flow: wrap;
         padding: .5em 1.5em 1.7em 1.5em;    
+        justify-content: center;
     }
 
     label, input {

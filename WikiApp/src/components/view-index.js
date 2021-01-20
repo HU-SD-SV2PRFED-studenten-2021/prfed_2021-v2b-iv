@@ -32,7 +32,6 @@ class viewIndex extends LitElement {
             filteren:{type: String, reflect:true},
             artikelList:{type:Array},
             filter_:{type : String, reflect: true}
-
         }
     }
 
@@ -70,7 +69,7 @@ class viewIndex extends LitElement {
             ${this.articleData.map(category => html`
             
             <category-list list-title="${category.name}">
-                ${this.filter_ != 'all' ? category.artikelen.filter(artikel => artikel.rol === this.filter_).map(artikel => html`
+                ${this.filter_ != 'all' ? category.artikelen.slice(0, 3).filter(artikel => artikel.rol === this.filter_).map(artikel => html`
                 
                 <wk-article
                     category = "${category.id}"
@@ -79,7 +78,7 @@ class viewIndex extends LitElement {
                     rol = ${artikel.rol}>
                 </wk-article>
                 `) :
-            category.artikelen.map(artikel => html`
+            category.artikelen.slice(0, 3).map(artikel => html`
                     
                 <wk-article
                     category = "${category.id}"

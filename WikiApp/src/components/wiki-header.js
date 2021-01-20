@@ -38,7 +38,7 @@ class wikiHeader extends LitElement {
             #wiki-logo {
                 height: 5em;
                 width: 12em;
-                border-radius: 30px;
+                border-radius: 70px;
             }
             
             #wiki-logo:hover {

@@ -8,7 +8,8 @@ class WikiArtikel extends LitElement {
             id: { type: String, attribute: 'id', reflect: true },
             titel: { type: String, reflect: true },
             tekst: { type: String},
-            category: {type: String}
+            category: {type: String},
+            rol: {type: String}
         }
     }
 
@@ -37,12 +38,18 @@ class WikiArtikel extends LitElement {
             #titel-link:hover {
                 text-decoration: underline;
             }
+            
+            .gast{
+            display: none;
+            }
         `;
+    }
+    constructor() {
+        super();
     }
 
     connectedCallback() {
         super.connectedCallback();
-
         getData('categories')
             .then(({categories}) => {
                 const categoryPromises = categories.map(category => getData(category))
@@ -58,10 +65,16 @@ class WikiArtikel extends LitElement {
                 tekstCont.innerHTML = this.tekst;
             })
 
+        this.rol = localStorage.getItem('role')
+        if(this.rol === null){
+            this.rol = "gast"
+        }
+
     }
 
 
     render() {
+        console.log(this.artikelData)
         return html`
         <div id="artikel-cont">
             <div id="artikel-header-cont">
@@ -75,13 +88,12 @@ class WikiArtikel extends LitElement {
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            bewerk artikel
-                        </a>
+                       <article-bewerken   .artikelData = "${this.artikelData}" .titel = "${this.titel}" .text = "${this.tekst}" .category = ${this.category}></article-bewerken>
                     </li>
                 </ul>
-            </div>
+            </div>          
             <div id="tekst-cont"></div>
+            <delete-article titel="${this.titel}"></delete-article>
         </div>
         `;
     }
