@@ -2,9 +2,6 @@ import {LitElement, html, css} from 'https://cdn.skypack.dev/lit-element@2.3.1'
 
 class WikiLogin extends LitElement {
 
-    // static get properties(){
-    //     // return { name: { type: String } };
-    // }
 
     static get styles() {
         return css`
@@ -100,8 +97,6 @@ class WikiLogin extends LitElement {
                 else if (loggedInUser.email.includes("docent"))
                     localStorage.setItem("role", "docent");
 
-                /* Ga naar volgende pagina...... */
-                /* Bij uitloggen, localStorage.removeItem("role") en "email"*/
             })
             .catch((error) => {
                 var errorCode = error.code;
