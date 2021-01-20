@@ -83,17 +83,17 @@ class Footer extends LitElement {
 
         <ul>
             <li>
-                <a class="footer-links" href="#">
+                <a class="footer-links" href="/inopbouw.html">
                     Privacy Policy
                 </a>
             </li>
             <li>
-                <a class="footer-links" href="#">
+                <a class="footer-links" href="/inopbouw.html">
                     Terms of Service
                 </a>
             </li>
             <li>
-                <a  class="footer-links" href="#">
+                <a  class="footer-links" href="/inopbouw.html">
                     About
                 </a>
             </li>
