@@ -28,22 +28,3 @@ export const VisibilityFilter = {
 
   const getFilterSelector = state => state.filter;
 
-
-
-// TODO: hier moet je de opgehaalde categorieen filtreren op basis van de huidige state
-
-
-// export const getVisibleTodosSelector = createSelector(
-//   getTodosSelector, getFilterSelector, 
-//   (todos, filter) => { 
-//     switch (filter) {
-//       case VisibilityFilters.SHOW_COMPLETED:
-//         return analyseren;
-//       case VisibilityFilters.SHOW_ACTIVE:
-//         return todos.filter(todo => !todo.complete);
-//       default:
-//         return todos;
-        
-//     }
-//   }
-// );
