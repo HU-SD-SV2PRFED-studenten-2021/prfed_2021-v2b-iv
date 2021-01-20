@@ -44,10 +44,12 @@ class WikiArtikel extends LitElement {
             }
         `;
     }
+    constructor() {
+        super();
+    }
 
     connectedCallback() {
         super.connectedCallback();
-
         getData('categories')
             .then(({categories}) => {
                 const categoryPromises = categories.map(category => getData(category))
@@ -72,6 +74,7 @@ class WikiArtikel extends LitElement {
 
 
     render() {
+        console.log(this.artikelData)
         return html`
         <div id="artikel-cont">
             <div id="artikel-header-cont">
@@ -85,9 +88,7 @@ class WikiArtikel extends LitElement {
                         </a>
                     </li>
                     <li>
-                        <a class="${this.rol}" href="#">
-                            bewerk artikel
-                        </a>
+                       <article-bewerken   .artikelData = "${this.artikelData}" .titel = "${this.titel}" .text = "${this.tekst}" .category = ${this.category}></article-bewerken>
                     </li>
                 </ul>
             </div>          
