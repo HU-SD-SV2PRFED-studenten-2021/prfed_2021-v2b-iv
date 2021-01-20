@@ -1,22 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Wiki V2B-IV</title>
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styling/style.css">
+    <title>Hbo-i Wiki website</title>
 </head>
+
 <body>
-    <header>
-        <h1>Wiki</h1>
-    </header>
-
+    <wiki-header></wiki-header>
+    <nav>
+        <form action="/login">
+            <button id="inloggen" class="nav-btn primary-btn">Inloggen</button>
+        </form>
+        <form action="/">
+            <button id="uitloggen" onclick="myFunction()" class="nav-btn third-btn">Uitloggen</button>
+        </form>
+        <form action="/toevoegen">
+            <button id="voegArtikel" class="nav-btn secondary-btn">Voeg artikel toe</button>
+        </form>
+    </nav>
     <main>
+        <view-index></view-index>
+        <script type="module">
+            const voegArtikel = document.getElementById('voegArtikel')
+            const uitloggen = document.getElementById('uitloggen')
+            const inloggen = document.getElementById('inloggen')
+            const rol = localStorage.getItem('role')
+
+            if (rol === null){
+                voegArtikel.style.display = 'none'
+                uitloggen.style.display = 'none'
+            }
+            if (rol != null){
+                inloggen.style.display = 'none'
+            }
+
+            import getData from "./utils/get-data.js"
+            const indexView = document.querySelector('view-index')
+            const wikiHeader = document.querySelector('wiki-header')
+
+            getData('categories')
+                .then(({ categories }) => {
+                    const categoryPromises = categories.map(category => getData(category))
+                    return Promise.all(categoryPromises)
+                })
+                .then(articleData => {
+                    indexView.articleData = articleData
+                    wikiHeader.articleData = articleData
+                })
+
+            function openForm() {
+                console.log('open form')
+            }
+        </script>
+        <script>
+            function myFunction(){
+                localStorage.clear();
+            };
+        </script>
+        <script>
+            function myFunction(){
+                localStorage.clear();
+            };
+        </script>
     </main>
-
-    <footer>
-    </footer>
-
+    <wiki-footer></wiki-footer>
+    <script type="module" src="main.js"></script>
 </body>
-
 </html>

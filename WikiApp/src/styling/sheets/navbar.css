@@ -1,0 +1,21 @@
+nav {
+    width: min-content;
+    justify-self: right;
+    align-items: center;
+    box-sizing: border-box;
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    border-left: 1px solid #e8e8e8;
+    background-color: #f1f1f1;
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+  nav {
+      justify-self: center;
+      width: 100%;
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "id":"software",
+  "name": "Software",
+  "artikelen": [
+    { "id": "10", "title": "HTML", "rol": "analyseren", "text": "HyperText Markup Language (afgekort HTML) is een op SGML gebaseerde opmaaktaal voor de specificatie van documenten, voornamelijk bedoeld voor het wereldwijde web. Het is de standaard opmaaktaal voor webpagina's. Documenten in HTML kunnen geopend en gelezen worden door een webbrowser om vervolgens als webpagina weergegeven te worden. HTML-documenten bevatten op de eerste plaats semantische structuur en tekstuele inhoud van een webpagina; de opmaak en visuele weergave kunnen er ook in worden beschreven, maar daar wordt tegenwoordig gewoonlijk CSS voor gebruikt.","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "11", "title": "JavaScript", "rol": "analyseren", "text": "De eerste versie van JavaScript werd in 1995 ontwikkeld door Brendan Eich van Netscape Communications Corporation voor gebruik in Netscape Navigator. Aanvankelijk was de naam Mocha en vervolgens LiveScript. De taal werd hernoemd tot JavaScript in de tijd dat in de Netscape-browser ook ondersteuning voor Java-applets werd ingebouwd.\n\nMet de introductie van JavaScript ontstonden de eerste mogelijkheden om webpagina's interactief te maken. Dit werd later Dynamic HTML genoemd.\n\nNetscape heeft in een poging om JavaScript als een officiële norm erkend te krijgen en er toch zelf voldoende zeggingskracht over te behouden de taal laten normeren door de European Computer Manufacturers Association (ECMA), waarbij de naam om redenen betreffende het merkrecht is gewijzigd in ECMAScript. De relevante ISO-standaard is ISO 16262 (Internationale Organisatie voor Standaardisatie). De huidige versie van JavaScript is versie ECMAScript 2018 (juni 2018).\n\nMicrosoft heeft een eigen implementatie van JavaScript ontwikkeld onder de naam JScript en Adobe heeft een eigen versie genaamd ActionScript die gebruikt wordt in Flash.","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "12", "title": "Hibernate", "rol": "analyseren", "text": "Hibernate is een ORM-bibliotheek voor Java. Het is een opensourceframework dat beschikbaar is onder de LGPL. Hibernate werd gemaakt door een internationaal team van Java-ontwikkelaars. Het is een eenvoudig te gebruiken framework voor het koppelen van een objectgeoriënteerd domeinmodel aan een traditionele relationele database.\n\nHibernate zorgt voor de koppeling van Java-klassen aan databasetabellen (en voor het koppelen van Java-datatypes aan SQL-datatypes). Het zorgt ook voor de ophaalfuncties, wat het ontwikkeltraject aanmerkelijk kan verkorten. De ontwikkelaar hoeft zich met dit framework niet meer bezig te houden met SQL- en JDBC-verbindingen.\n\nHet doel van Hibernate is de ontwikkelaar zo veel mogelijk te vrijwaren van programmeertaken die gerelateerd zijn aan het vastleggen van gegevens. Hibernate is eenvoudig in een project te incorporeren, of dit nu een nieuwe ontwikkeling of het ontsluiten van een bestaand systeem betreft. Hibernate genereert de benodigde SQL-instructies en de ontwikkelaar hoeft geen code op te nemen voor de verwerking van de resultaten en de conversie van gegevenstypes. Daardoor kan een applicatie worden ontwikkeld die eenvoudig portable is te maken naar alle SQL-databases."},    { "id": "28", "title": "BPMN", "rol": "manage & control", "text": "BPMN Modellen worden vaak gebruikt in het zakenleven.","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "29", "title": "Actor Templates", "rol": "manage & control", "text": "Actor templates om even alle actoren in beeld te brengen.","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "21", "title": "ICT", "rol": "adviseren", "text": "ICT, or information and communications technology (or technologies), is the infrastructure and components that enable modern computing.\n\nAlthough there is no single, universal definition of ICT, the term is generally accepted to mean all devices, networking components, applications and systems that combined allow people and organizations (i.e., businesses, nonprofit agencies, governments and criminal enterprises) to interact in the digital world.\n\nComponents of an ICT system\nICT encompasses both the internet-enabled sphere as well as the mobile one powered by wireless networks. It also includes antiquated technologies, such as landline telephones, radio and television broadcast -- all of which are still widely used today alongside cutting-edge ICT pieces such as artificial intelligence and robotics.\n\nICT is sometimes used synonymously with IT (for information technology); however, ICT is generally used to represent a broader, more comprehensive list of all components related to computer and digital technologies than IT.\n\nThe list of ICT components is exhaustive, and it continues to grow. Some components, such as computers and telephones, have existed for decades. Others, such as smartphones, digital TVs and robots, are more recent entries.\n\nICT commonly means more than its list of components, though. It also encompasses the application of all those various components. It's here that the real potential, power and danger of ICT can be found." ,"geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "22", "title": "Domeinklasse", "rol": "manage", "text": "Neem als uitgangspunt alle use case scenario's of ieder document dat beschrijft wat het systeem moet doen (requirementsdocumenten).\nMarkeer door bijv te onderstrepen ieder zelfstandignaamwoord die je kunt vinden is in de verzamelde documenten. Maak je in dit stadium nog geen zorgen over de naamgeving. Dit zijn kandidaten klassen.\nMaak een lijst van de gevonden naamwoorden en rangschik deze naar betekenis. Van de namen die dezelfde betekenis hebben gebruik slechts 1.\nMaak van de gereduceerde lijst een diagram (rechthoek met de naam van de klasse er in).\nTeken de relaties tussen de klassen door een lijn te trekken tussen elke twee klassen die een relatie hebben. Twee klassen hebben een relatie met elkaar als er een zin bestaat (of te maken) waarin die twee klassen voor komen. Met enig kennis over het te maken systeem zijn de relaties redelijk eenvoudig te vinden.\nOm de methodes behorende bij een klasse te vinden, neem je als uitgangspunt dezelfde documenten en ga je nu opzoek naar de werkwoorden (acties) in deze documenten. Dit zijn de kandidaten methoden\nOm te bepalen bij welke klassen deze kandidaten methoden horen stel je de vraag welke klasse is verantwoordelijk voor welke actie. Net als voor de kandidatenklassen rangschik je de acties naar betekenis." ,"geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "23", "title": "Domein ICT", "rol": "adviseren", "text": "ICT Domein is een onderwerp wat veel lijkt op domeinklasse gg." ,"geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "13", "title": "ICT", "rol": "adviseren", "text": "ICT, or information and communications technology (or technologies), is the infrastructure and components that enable modern computing.\n\nAlthough there is no single, universal definition of ICT, the term is generally accepted to mean all devices, networking components, applications and systems that combined allow people and organizations (i.e., businesses, nonprofit agencies, governments and criminal enterprises) to interact in the digital world.\n\nComponents of an ICT system\nICT encompasses both the internet-enabled sphere as well as the mobile one powered by wireless networks. It also includes antiquated technologies, such as landline telephones, radio and television broadcast -- all of which are still widely used today alongside cutting-edge ICT pieces such as artificial intelligence and robotics.\n\nICT is sometimes used synonymously with IT (for information technology); however, ICT is generally used to represent a broader, more comprehensive list of all components related to computer and digital technologies than IT.\n\nThe list of ICT components is exhaustive, and it continues to grow. Some components, such as computers and telephones, have existed for decades. Others, such as smartphones, digital TVs and robots, are more recent entries.\n\nICT commonly means more than its list of components, though. It also encompasses the application of all those various components. It's here that the real potential, power and danger of ICT can be found." ,"geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "14", "title": "Domeinklasse", "rol": "adviseren", "text": "Neem als uitgangspunt alle use case scenario's of ieder document dat beschrijft wat het systeem moet doen (requirementsdocumenten).\nMarkeer door bijv te onderstrepen ieder zelfstandignaamwoord die je kunt vinden is in de verzamelde documenten. Maak je in dit stadium nog geen zorgen over de naamgeving. Dit zijn kandidaten klassen.\nMaak een lijst van de gevonden naamwoorden en rangschik deze naar betekenis. Van de namen die dezelfde betekenis hebben gebruik slechts 1.\nMaak van de gereduceerde lijst een diagram (rechthoek met de naam van de klasse er in).\nTeken de relaties tussen de klassen door een lijn te trekken tussen elke twee klassen die een relatie hebben. Twee klassen hebben een relatie met elkaar als er een zin bestaat (of te maken) waarin die twee klassen voor komen. Met enig kennis over het te maken systeem zijn de relaties redelijk eenvoudig te vinden.\nOm de methodes behorende bij een klasse te vinden, neem je als uitgangspunt dezelfde documenten en ga je nu opzoek naar de werkwoorden (acties) in deze documenten. Dit zijn de kandidaten methoden\nOm te bepalen bij welke klassen deze kandidaten methoden horen stel je de vraag welke klasse is verantwoordelijk voor welke actie. Net als voor de kandidatenklassen rangschik je de acties naar betekenis." ,"geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "15", "title": "Domein ICT", "rol": "adviseren", "text": "ICT Domein is een onderwerp wat veel lijkt op domeinklasse gg.","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ] }
+  ]
+}

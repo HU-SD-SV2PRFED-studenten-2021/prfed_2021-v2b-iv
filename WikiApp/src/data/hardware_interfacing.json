@@ -1,0 +1,237 @@
+{
+  "id":"hardware_interfacing",
+  "name": "Hardware Interfacing",
+  "artikelen": [
+    { "id": "4", "title": "Use case diagram", "rol": "realiseren", "text": "Een usecasediagram in de Unified Modeling Language is een diagram dat wordt gedefinieerd en verder ontwikkeld door usecase-analyse.[1] Usecasediagrammen worden voornamelijk gebruikt in software engineering om de requirements van een systeem in kaart te brengen.\n\nHet doel van het usecasediagram is om een grafisch overzicht te geven van de functionaliteiten van een systeem in termen van actoren, hun bedoeling uitgedrukt als usecases en de onderlinge relaties tussen deze usecases.","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "5", "title": "Use case template", "rol": "realiseren","text": "Een Use Case (Specification) is de uitgewerkte beschrijving van de interactie van een Actor (menselijk of anders) met het te bouwen systeem. Deze beschrijving is zodanig dat ze een resultaat oplevert dat waarde heeft voor de opdrachtgever / gebruiker. De interactiestappen kunnen samenhangend en ononderbroken worden gedaan. Er is één basisscenario, dat wil zeggen, de meest eenvoudige of logische weg naar het resultaat, en optioneel één of meer alternatieve scenario’s waarin alternatieve paden naar het resultaat beschreven worden. Eveneens optioneel één of meer foutscenario’s, waarin wordt vastgelegd wat er gebeurt bij functionele fouten: schending van business rules enzovoorts.","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "6", "title": "Activity diagram", "rol": "realiseren", "text": "Een activiteitendiagram is een van de methoden en technieken in de informatica om stapsgewijze bedrijfsprocessen in een diagram weer te geven, als onderdeel van een systeemanalyse. In het algemeen kunnen de activiteiten van een proces worden opgedeeld in:[2]\n\nProducten: de goederen en diensten van een bedrijf\nBewerkingen: activiteiten verricht aan de goederen en diensten\nBeslissingen: beoordelingen over het verdere verloop van de activiteiten", "geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "4", "title": "ICT", "rol": "adviseren", "text": "ICT, or information and communications technology (or technologies), is the infrastructure and components that enable modern computing.\n\nAlthough there is no single, universal definition of ICT, the term is generally accepted to mean all devices, networking components, applications and systems that combined allow people and organizations (i.e., businesses, nonprofit agencies, governments and criminal enterprises) to interact in the digital world.\n\nComponents of an ICT system\nICT encompasses both the internet-enabled sphere as well as the mobile one powered by wireless networks. It also includes antiquated technologies, such as landline telephones, radio and television broadcast -- all of which are still widely used today alongside cutting-edge ICT pieces such as artificial intelligence and robotics.\n\nICT is sometimes used synonymously with IT (for information technology); however, ICT is generally used to represent a broader, more comprehensive list of all components related to computer and digital technologies than IT.\n\nThe list of ICT components is exhaustive, and it continues to grow. Some components, such as computers and telephones, have existed for decades. Others, such as smartphones, digital TVs and robots, are more recent entries.\n\nICT commonly means more than its list of components, though. It also encompasses the application of all those various components. It's here that the real potential, power and danger of ICT can be found." ,"geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "5", "title": "Domeinklasse", "rol": "adviseren", "text": "Neem als uitgangspunt alle use case scenario's of ieder document dat beschrijft wat het systeem moet doen (requirementsdocumenten).\nMarkeer door bijv te onderstrepen ieder zelfstandignaamwoord die je kunt vinden is in de verzamelde documenten. Maak je in dit stadium nog geen zorgen over de naamgeving. Dit zijn kandidaten klassen.\nMaak een lijst van de gevonden naamwoorden en rangschik deze naar betekenis. Van de namen die dezelfde betekenis hebben gebruik slechts 1.\nMaak van de gereduceerde lijst een diagram (rechthoek met de naam van de klasse er in).\nTeken de relaties tussen de klassen door een lijn te trekken tussen elke twee klassen die een relatie hebben. Twee klassen hebben een relatie met elkaar als er een zin bestaat (of te maken) waarin die twee klassen voor komen. Met enig kennis over het te maken systeem zijn de relaties redelijk eenvoudig te vinden.\nOm de methodes behorende bij een klasse te vinden, neem je als uitgangspunt dezelfde documenten en ga je nu opzoek naar de werkwoorden (acties) in deze documenten. Dit zijn de kandidaten methoden\nOm te bepalen bij welke klassen deze kandidaten methoden horen stel je de vraag welke klasse is verantwoordelijk voor welke actie. Net als voor de kandidatenklassen rangschik je de acties naar betekenis." ,"geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "6", "title": "Domein ICT", "rol": "adviseren", "text": "ICT Domein is een onderwerp wat veel lijkt op domeinklasse gg." ,"geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "36", "title": "Financiële software", "rol": "adviseren", "text": "Waarom zou u kiezen voor een financieel pakket, als ERP software u dezelfde functionaliteit belooft? Hoe zoekt u naar financiële software en kiest u uit talloze aanbieders de oplossing die het best past bij uw administratieve proces? Het ICT informatiecentrum biedt u informatie over het vergelijken, selecteren en implementeren van financiële software." ,"geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "37", "title": "Digitale transformatie", "rol": "adviseren", "text": "De digitale transformatie van de samenleving, het bedrijfsleven, overheden en business modellen is in volle gang. Nieuwe, snel ontwikkelende IT oplossingen en technologie veranderen de wereld om ons heen met hoge snelheid. Digitaal transformeren of niet is voor steeds meer bedrijven geen keuze meer, maar een noodzaak." ,"geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "38", "title": "Workflow management", "rol": "adviseren", "text": "De meest letterlijke vertaling van het begrip workflow is het woord ‘werkstroom’. Iedere in regels of procedures vastgelegde afhandeling is te beschouwen als een werkstroom of workflow. Zo worden orders vaak via vaste procedures afgehandeld, maar ook serviceacties of klachtafhandelingen. Voor iedereen in de organisatie die betrokken is bij een werkstroom, is het van belang dat hij of zij kan beschikken over dezelfde informatie en inzicht heeft in de actuele status van de afhandeling. Workflow management software biedt de oplossing daarvoor." ,"geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "39", "title": "SCM software", "rol": "adviseren", "text": "Wat is supply chain management software, ofwel SCM software? Hoe selecteert u een SCM pakket? Welke SCM systemen zijn er, wat zijn de verschillen en hoe vergelijkt u deze? Hoe kunt u het best SCM implementeren? ICT informatiecentrum biedt u informatie over SCM software die u helpt bij het succesvol uitvoeren van uw softwareproject." ,"geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "40", "title": "Product information management – PIM", "rol": "adviseren", "text": "Product information management of PIM gaat om het beheer van twee soorten gegevens. Ten eerste zijn dat de gegevens die het product zelf omschrijven, zoals technische specificaties en gebruikstoepassingen. Daarnaast betreft het gegevens die op een andere manier met het product te maken hebben, waaronder logistieke en commerciële informatie. Op steeds meer plaatsen wordt deze productinformatie gecommuniceerd, zoals op websites en in brochures, gebruikshandleidingen, offertes, enz. Het is belangrijk dat de productinformatie op alle plaatsen waar deze gecommuniceerd wordt, gelijkluidend is. Product information management is daarop gericht. Het zorgt voor consistente informatie ongeacht het medium. U realiseert het met PIM software of een PIM systeem.","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ] }
+  ]
+}
