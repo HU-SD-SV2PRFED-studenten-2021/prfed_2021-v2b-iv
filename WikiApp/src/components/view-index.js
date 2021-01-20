@@ -55,7 +55,7 @@ class viewIndex extends LitElement {
     //     }
     // }
     setFilterValues = () => {
-        const filterElement = this.shadowRoot.querySelector('radio-button')
+        const filterElement = this.shadowRoot.querySelector('categorieen-filter')
         this.filter_ = filterElement.categories;
 
     }
@@ -64,7 +64,7 @@ class viewIndex extends LitElement {
     render() {
 
         return html`
-        <radio-button @change=${this.setFilterValues} .filter="${this.filter_}"></radio-button>
+        <categorieen-filter @change=${this.setFilterValues} .filter="${this.filter_}"></categorieen-filter>
         <div class="category-container">
             ${this.articleData.map(category => html`
             

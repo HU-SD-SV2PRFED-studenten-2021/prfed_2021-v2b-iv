@@ -78,7 +78,7 @@ const VisibilityFilter = {
     SHOW_ALL : 'all'
 }
 
-class radioButton extends LitElement {
+class CategorieenFilter extends LitElement {
 
     static get properties() {
         return {
@@ -135,4 +135,4 @@ class radioButton extends LitElement {
     }
 
 }
-customElements.define('radio-button', radioButton);
+customElements.define('categorieen-filter', CategorieenFilter);
