@@ -11,11 +11,14 @@
     <wiki-header></wiki-header>
     <nav>
         <form action="/login">
-            <button class="nav-btn primary-btn">Inloggen</button>
+            <button id="inloggen" class="nav-btn primary-btn">Inloggen</button>
+        </form>
+        <form action="/">
+            <button id="uitloggen" onclick="myFunction()" class="nav-btn third-btn">Uitloggen</button>
         </form>
         <form action="/toevoegen">
             <button class="nav-btn secondary-btn">Voeg artikel toe</button>
-        </form>    
+        </form>
     </nav>
     <main>
         <wiki-article></wiki-article>
@@ -23,6 +26,19 @@
     <wiki-footer></wiki-footer>
     <script type="module" src="main.js"></script>
     <script>
+        const voegArtikel = document.getElementById('voegArtikel')
+        const uitloggen = document.getElementById('uitloggen')
+        const inloggen = document.getElementById('inloggen')
+        const rol = localStorage.getItem('role')
+
+        if (rol === null){
+            voegArtikel.style.display = 'none'
+            uitloggen.style.display = 'none'
+        }
+        if (rol != null){
+            inloggen.style.display = 'none'
+        }
+
         const viewProduct = document.querySelector('wiki-article')
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
@@ -30,6 +46,11 @@
 
         viewProduct.setAttribute('category', category)
         viewProduct.setAttribute('id', id)
-    </script>    
+    </script>
+    <script>
+        function myFunction(){
+            localStorage.clear();
+        };
+    </script>
 </body>
 </html>
