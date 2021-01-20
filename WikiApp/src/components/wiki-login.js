@@ -97,7 +97,7 @@ class WikiLogin extends LitElement {
                 else if (loggedInUser.email.includes("docent"))
                     localStorage.setItem("role", "docent");
 
-            })
+            }).then(()=>location.replace("index.html"))
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
