@@ -1,5 +1,6 @@
 import {LitElement, html, css} from 'https://cdn.skypack.dev/lit-element@2.3.1'
 import filterSuggesties from "../utils/search-bar-filter.js";
+import getData from "../utils/get-data.js";
 
 
 class SearchBar extends LitElement {
@@ -73,8 +74,22 @@ class SearchBar extends LitElement {
     static get properties(){
         return {
             inputValue: { type: String },
-            suggesties: { type: Array }
+            suggesties: { type: Array },
+            articleData: {type: Array},
+            category : {type: String}
         };
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+        getData('categories')
+            .then(({categories}) => {
+                const categoryPromises = categories.map(category => getData(category))
+                return Promise.all(categoryPromises)
+            })
+            .then(articleData => {
+                this.articleData = articleData
+    })
     }
 
 
@@ -110,6 +125,7 @@ class SearchBar extends LitElement {
     }
 
     render() {
+
         // const urlParams = new URLSearchParams(window.location.search);
         return html`
         <div class="zoeken-container">
@@ -119,8 +135,13 @@ class SearchBar extends LitElement {
             >
             <div class="suggestie-container">
                 ${this.suggesties.map(artikel => html`
-                ${console.log(artikel)}
-                <a href="${'/artikel?id=' + artikel.id}">
+                    ${this.articleData.map(category => {
+                        const vindArtikel = category.artikelen.find(randomArtikel => randomArtikel.id === artikel.id)
+                        if (vindArtikel !== undefined){
+                            this.category = category.id
+                        }
+                    })}   
+                <a href="${'/artikel?id=' + artikel.id}&category=${this.category}">
                     <li>
                         <h3>${artikel.title}</h3>
                         <p>${artikel.text}</h4>

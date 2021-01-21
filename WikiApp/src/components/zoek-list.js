@@ -44,7 +44,8 @@ class searchArtikelen extends LitElement {
 
     static get properties(){
         return {
-            articleData : {type: Array}
+            articleData : {type: Array},
+            category : {type: String}
         };
     }
 
@@ -62,7 +63,13 @@ class searchArtikelen extends LitElement {
                 ${filterSuggesties(inputValue,this.articleData).map(artikel => html`
                     ${console.log(artikel)}
                     <li>
-                        <a href="${urlParams + '/artikel?id=' + artikel.id}">
+                    ${this.articleData.map(category => {
+                        const vindArtikel = category.artikelen.find(randomArtikel => randomArtikel.id === artikel.id)
+                            if (vindArtikel !== undefined){
+                                this.category = category.id
+                            }
+                        })}
+                        <a href="${urlParams + '/artikel?id=' + artikel.id}&category=${this.category}">
                             <h3>${artikel.title}</h3>
                             <p>${artikel.text}</p>
                         </a>
