@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styling/style.css">
+
+    <title>Hbo-i Wiki website | Artikel toevoegen</title>
+
+</head>
+
+<body>
+<script>
+    window.process = { env: { NODE_ENV: 'production' } };
+</script>
+<wiki-header></wiki-header>
+<nav>
+    <form action="/login">
+        <button id="inloggen" class="nav-btn primary-btn">Inloggen</button>
+    </form>
+    <form action="/">
+        <button id="uitloggen" onclick="myFunction()" class="nav-btn third-btn">Uitloggen</button>
+    </form>
+    <form action="/toevoegen">
+        <button id="voegArtikel" class="nav-btn secondary-btn">Voeg artikel toe</button>
+    </form>
+</nav>
+<main>
+    <article-toevoegen></article-toevoegen>
+</main>
+<script type="module">
+    const voegArtikel = document.getElementById('voegArtikel')
+    const uitloggen = document.getElementById('uitloggen')
+    const inloggen = document.getElementById('inloggen')
+    const rol = localStorage.getItem('role')
+
+    if (rol === null){
+        voegArtikel.style.display = 'none'
+        uitloggen.style.display = 'none'
+    }
+    if (rol != null){
+        inloggen.style.display = 'none'
+    }
+
+    import getData from "./utils/get-data.js"
+
+
+    const wikiHeader = document.querySelector('wiki-header')
+    const toevoegen = document.querySelector('article-toevoegen')
+
+    getData('categories').then(({ categories }) => {toevoegen.articleData = categories})
+
+    getData('categories')
+        .then(({ categories }) => {
+            const categoryPromises = categories.map(category => getData(category))
+            return Promise.all(categoryPromises)
+        })
+        .then(articleData => {
+            wikiHeader.articleData = articleData
+        })
+
+    function openForm() {
+        console.log('open form')
+    }
+</script>
+<script>
+    function myFunction(){
+        localStorage.clear();
+    };
+</script>
+<wiki-footer></wiki-footer>
+<script type="module" src="main.js"></script>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+</script>
+</body>
+</html>

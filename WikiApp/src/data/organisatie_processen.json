@@ -1,0 +1,237 @@
+{
+  "id":"organisatie_processen",
+  "name": "Organisatie Processen",
+  "artikelen": [
+    { "id": "13", "title": "User Stories", "rol": "manage & control", "text": "Een user story is een korte beschrijving (story) van wat een gebruiker (user) wil. User stories worden gebruikt bij het ontwikkelen van software of producten. Een user story bestaat uit enkele zinnen gewone spreektaal van de (computer)gebruiker waarin staat wat de gebruiker doet of moet doen, als onderdeel van z'n werk. User stories worden gebruikt binnen agile software development als een manier om de requirements te beschrijven. Hierin zegt men 'wie', 'wat', 'waarom' wil. Het geheel is weinig gedetailleerd en moet passen op een post-it. Het is de belangrijkste manier waarop de gebruiker invloed heeft op de functionaliteit van het te ontwikkelen systeem of product.\n\nUser stories kunnen ook door ontwikkelaars geschreven worden om niet-functionele eisen vast te leggen bijvoorbeeld op het gebied van beveiliging, kwaliteit en performance,[1] maar de eerstverantwoordelijke voor de verzameling van de user stories is de producteigenaar.","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "14", "title": "BPMN", "rol": "manage & control", "text": "Business Proces Model and Notation (BPMN) is een standaard voor het modelleren van bedrijfsprocessen en het weergeven van die bedrijfsprocessen in een Business Proces Diagram (BPD). De gebruikte methodiek lijkt erg op de activiteitendiagrammen van Unified Modeling Language (UML)[1]. Het doel van BPMN is om bedrijfsprocesmanagement te verduidelijken, zowel voor technische als niet-technische gebruikers, door een notatie te gebruiken die intuïtief aanvoelt voor niet-technische gebruikers, maar wel in staat stelt om complexe processemantiek weer te geven. De BPMN-specificatie is ook een brug tussen de grafische weergave en de onderliggende constructies van uitvoerende talen, zoals Business Process Execution Language (BPEL)[2].","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "15", "title": "Use Case", "rol": "manage & control", "text": "Een usecase in software engineering en systems engineering is een beschrijving van een gedrag van een systeem, dat reageert op een verzoek dat stamt van buiten het systeem. Met andere woorden, de usecase beschrijft \"wie\" met het betreffende systeem \"wat\" kan doen. De usecasetechniek wordt gebruikt bij de bepaling van de requirements van het gedrag van een bepaald systeem.","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "10", "title": "Java", "rol": "ontwerpen", "text": "Java leukste taal natuurlijk om mee te programmeren" ,"geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "11", "title": "Python", "rol": "ontwerpen", "text": "Python, leuke taal 3 maanden maar gehad, mocht langer!","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ] },
+    { "id": "12", "title": "CSS", "rol": "ontwerpen", "text": "CSS zijn we nu mee bezig." ,"geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "30", "title": "Rest API", "rol": "ontwerpen", "text": "Java leukste taal natuurlijk om mee te programmeren","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ] },
+    { "id": "24", "title": "HTML", "rol": "analyseren", "text": "HTML mag geen programmeertaal genoemd worden","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "25", "title": "JavaScript", "rol": "analyseren", "text": "JavaScript goeie. Het is zeker een veelgebruikte taal.","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "26", "title": "Hibernate", "rol": "analyseren", "text": "Hibernate hebben we niet lang gehad, max 2 week.","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]},
+    { "id": "27", "title": "User Stories", "rol": "manage & control", "text": "User stories zijn handig om dingen te doen","geschiedenis"  : [
+      {
+        "time": "20:21:30",
+        "date": "2020-10-01",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "advice geven",
+        "tekst": "test tekst test tekst test tekst"
+      },
+
+      {
+        "time": "22:10:33",
+        "date": "2020-09-28",
+        "editor": {
+          "username": "anon123"
+        },
+        "title": "giving advice",
+        "tekst": "test tekst test tekst"
+      }
+    ]}
+  ]
+}

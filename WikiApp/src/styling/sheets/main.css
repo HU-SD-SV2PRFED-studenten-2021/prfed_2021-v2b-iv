@@ -1,0 +1,14 @@
+main {
+    grid-area: main;
+    box-sizing: border-box;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    min-height: 800px;
+}
+
+
+article {
+    border: 0.1em solid rgb(46, 42, 42);
+    margin-top: 3em;
+    padding: 1em;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styling/style.css">
+    <title>Hbo-i Wiki website | Geschiedenis</title>
+</head>
+
+<body>
+<wiki-header></wiki-header>
+<nav>
+    <form action="/login">
+        <button id="inloggen" class="nav-btn primary-btn">Inloggen</button>
+    </form>
+    <form action="/">
+        <button id="uitloggen" onclick="myFunction()" class="nav-btn third-btn">Uitloggen</button>
+    </form>
+    <form action="/toevoegen">
+        <button id="voegArtikel" class="nav-btn secondary-btn">Voeg artikel toe</button>
+    </form>
+</nav>
+<main>
+    <article-history></article-history>
+</main>
+<wiki-footer></wiki-footer>
+<script type="module" src="main.js"></script>
+<script>
+    const voegArtikel = document.getElementById('voegArtikel')
+    const uitloggen = document.getElementById('uitloggen')
+    const inloggen = document.getElementById('inloggen')
+    const rol = localStorage.getItem('role')
+
+    if (rol === null){
+        voegArtikel.style.display = 'none'
+        uitloggen.style.display = 'none'
+    }
+    if (rol != null){
+        inloggen.style.display = 'none'
+    }
+
+    const artikelGeschiedenis = document.querySelector('article-history')
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    artikelGeschiedenis.setAttribute('id', id)
+    const category = urlParams.get('category')
+    artikelGeschiedenis.setAttribute('category', category)
+</script>
+<script>
+    function myFunction(){
+        localStorage.clear();
+    };
+</script>
+</body>
+</html>
